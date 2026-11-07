@@ -48,12 +48,21 @@ namespace GamejamCiclo2 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"DashBoard1";
-			this->Padding = System::Windows::Forms::Padding(0);
+			this->SuspendLayout();
+			// 
+			// DashBoard1
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(284, 261);
+			this->Name = L"DashBoard1";
+			this->Text = L"DashBoard1";
+			this->Load += gcnew System::EventHandler(this, &DashBoard1::DashBoard1_Load);
+			this->ResumeLayout(false);
+
 		}
 #pragma endregion
+	private: System::Void DashBoard1_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
 	};
 }

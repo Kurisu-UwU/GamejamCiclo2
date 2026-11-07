@@ -133,6 +133,7 @@
     <ClCompile Include="Registro.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ControladoraDeDatos.h" />
     <ClInclude Include="Creadores.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -160,8 +161,12 @@
     <ClInclude Include="Registro.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="RegistroClase.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DashBoard1.resx">
+      <DependentUpon>DashBoard1.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Instrucciones.resx">
       <DependentUpon>Instrucciones.h</DependentUpon>
     </EmbeddedResource>

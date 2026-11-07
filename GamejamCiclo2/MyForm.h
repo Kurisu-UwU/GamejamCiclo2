@@ -1,5 +1,5 @@
 #pragma once
-
+#include "ControladoraDeDatos.h"
 namespace GamejamCiclo2 {
 
 	using namespace System;
