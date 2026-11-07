@@ -99,10 +99,11 @@ namespace GamejamCiclo2 {
 			// 
 			// txtBoxQueConsultamos
 			// 
-			this->txtBoxQueConsultamos->Location = System::Drawing::Point(157, 115);
+			this->txtBoxQueConsultamos->Location = System::Drawing::Point(94, 139);
 			this->txtBoxQueConsultamos->Name = L"txtBoxQueConsultamos";
-			this->txtBoxQueConsultamos->Size = System::Drawing::Size(246, 20);
+			this->txtBoxQueConsultamos->Size = System::Drawing::Size(261, 20);
 			this->txtBoxQueConsultamos->TabIndex = 4;
+			this->txtBoxQueConsultamos->Text = L"Como recorrer un vector sin usar Listas";
 			// 
 			// MyForm
 			// 
