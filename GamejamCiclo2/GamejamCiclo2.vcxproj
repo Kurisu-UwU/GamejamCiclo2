@@ -167,6 +167,9 @@
     <EmbeddedResource Include="DashBoard1.resx">
       <DependentUpon>DashBoard1.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DashBoard3.resx">
+      <DependentUpon>DashBoard3.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Instrucciones.resx">
       <DependentUpon>Instrucciones.h</DependentUpon>
     </EmbeddedResource>

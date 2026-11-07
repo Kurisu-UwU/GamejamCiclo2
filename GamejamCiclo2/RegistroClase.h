@@ -11,15 +11,15 @@ class DatosRegistro {
 private:
 	int numero;
 public:
-	DatosRegistro();
-	DatosRegistro(int) {};
+	DatosRegistro() : numero(0) {};
+	DatosRegistro(int n) : numero(n) {};
 	~DatosRegistro() {};	
+	void SetNumero(int num) { numero = num; }
 	int getNumero() { return numero; }
 
 	void GenerarArchivo(string consulta, string resultado, string cambio, string valido, int numeroarchivo) {
 		string name = "Datos/DatosRegistro_";
-		string punto = ".txt";
-		name += to_string(numeroarchivo) + punto;
+		name += to_string(numeroarchivo) + ".txt";
 		ofstream my_file;
 		my_file.open(name);
 		if (!my_file) {
@@ -27,21 +27,83 @@ public:
 		}
 		else {
 			cout << "File created successfully" << endl;
-			my_file << "Consulta Realizada: " << consulta << endl;
-			my_file << "Consulta Resultado de la IA: " << resultado << endl;
-			my_file << "¿Que se cambió?: " << cambio << endl;
-			my_file << "¿Cómo de validó?: " << valido << endl;
+			my_file << consulta << endl;
+			my_file << resultado << endl;
+			my_file << cambio << endl;
+			my_file << valido << endl;
 		}
 		my_file.close();
-
-		//leer
-		/*if (my_file) {
-			char ch;
-			while (1) {
-				my_file >> ch;
-				if (my_file.eof()) break;
-				cout << ch;
-			}
-		}*/
 	}
+	vector<int> LeerArchivos(vector<string> buscadas) {
+		vector<int> conteo(buscadas.size(),0);
+		string nomb = "Datos/DatosRegistro_" + to_string(numero) + ".txt";
+		ifstream archivo(nomb);
+		string contenido = "";
+		string linea;
+
+		if (!archivo) {
+			cout << "Error opening file" << endl;
+		}
+
+		while (getline(archivo, linea)) {
+			contenido += linea + " ";
+		}
+
+
+
+
+		vector<string> palabras;
+		string actual = "";
+
+		for (size_t i = 0; i < contenido.size(); i++) {
+			if (contenido[i] == ' ' || contenido[i] == '\t' || contenido[i] == '\n') {
+				if (!actual.empty()) {
+
+
+
+
+					string limpia = "";
+					for (size_t i = 0; i < actual.size(); i++) {
+						char c = actual[i];
+						if (isalnum((unsigned char)c) || (unsigned char)c > 127) {
+							limpia += (char)tolower((unsigned char)c);
+						}
+					}
+					
+
+
+
+
+					if (!limpia.empty()) palabras.push_back(limpia);
+					actual = "";
+				}
+			}
+			else {
+				actual += contenido[i];
+			}
+		}
+		if (!actual.empty()) {
+
+			string limpia = "";
+			for (size_t i = 0; i < actual.size(); i++) {
+				char c = actual[i];
+				if (isalnum((unsigned char)c) || (unsigned char)c > 127) {
+					limpia += (char)tolower((unsigned char)c);
+				}
+			}
+
+			if (!limpia.empty()) palabras.push_back(limpia);
+		}
+
+		for (size_t i = 0; i < buscadas.size(); i++) {
+			string objetivo = buscadas[i];
+			for (size_t j = 0; j < palabras.size(); j++) {
+				if (palabras[j] == objetivo) {
+					conteo[i]++;
+				}
+			}
+		}
+		return conteo;
+	}
+	
 };
