@@ -66,7 +66,8 @@ namespace GamejamCiclo2 {
 		/// Variable del diseñador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
-		ControladoraDeDatos* controladora2;
+
+		   ControladoraDeDatos* controladora2;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -294,6 +295,7 @@ namespace GamejamCiclo2 {
 			this->btnLimpiar->TabIndex = 37;
 			this->btnLimpiar->Text = L"Limpiar";
 			this->btnLimpiar->UseVisualStyleBackColor = true;
+			this->btnLimpiar->Click += gcnew System::EventHandler(this, &Registro::btnLimpiar_Click);
 			// 
 			// btnAleatorio
 			// 
@@ -380,7 +382,15 @@ private: System::Void btnGuardar_Click(System::Object^ sender, System::EventArgs
 		Listado^ frm = gcnew Listado();
 		frm->ShowDialog();
 	}
-private: System::Void Registro_Load(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void btnLimpiar_Click(System::Object^ sender, System::EventArgs^ e) {
+	cbCategoria->Text = "";
+	cbCurso->Text = "";
+	cbHerramienta->Text = "";
+	tbConsulta->Text = "";
+	tbCambio->Text = "";
+	tbResultado->Text = "";
+	tbValidacion->Text = "";
+	monthCalendar1->SelectionStart = DateTime::Today;
 }
 };
 	
