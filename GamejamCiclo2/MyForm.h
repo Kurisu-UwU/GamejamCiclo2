@@ -179,10 +179,7 @@ namespace GamejamCiclo2 {
 			// 
 			// btnSalir
 			// 
-			this->txtBoxQueConsultamos->Location = System::Drawing::Point(157, 115);
-			this->txtBoxQueConsultamos->Name = L"txtBoxQueConsultamos";
-			this->txtBoxQueConsultamos->Size = System::Drawing::Size(246, 20);
-			this->txtBoxQueConsultamos->TabIndex = 4;
+
 			// 
 			// MyForm
 			// 
