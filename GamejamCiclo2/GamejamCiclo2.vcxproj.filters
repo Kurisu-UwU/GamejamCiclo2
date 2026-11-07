@@ -18,9 +18,57 @@
     <ClCompile Include="MyForm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Registro.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Listado.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DashBoard1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DashBoard2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DashBoard3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Instrucciones.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Creadores.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GenerarDatosPrueba.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Registro.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Listado.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DashBoard1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DashBoard2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DashBoard3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Instrucciones.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Creadores.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GenerarDatosPrueba.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

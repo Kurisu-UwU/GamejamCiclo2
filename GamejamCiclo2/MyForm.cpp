@@ -7,7 +7,6 @@ void main()
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
 	Application::Run(gcnew GamejamCiclo2::MyForm());
-	//Project1 es el nombre del proyecto
 }
 
 

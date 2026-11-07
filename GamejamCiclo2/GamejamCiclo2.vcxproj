@@ -122,14 +122,49 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Creadores.cpp" />
+    <ClCompile Include="DashBoard1.cpp" />
+    <ClCompile Include="DashBoard2.cpp" />
+    <ClCompile Include="DashBoard3.cpp" />
+    <ClCompile Include="GenerarDatosPrueba.cpp" />
+    <ClCompile Include="Instrucciones.cpp" />
+    <ClCompile Include="Listado.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="Registro.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Creadores.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="DashBoard1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="DashBoard2.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="DashBoard3.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="GenerarDatosPrueba.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Instrucciones.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Listado.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MyForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Registro.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Instrucciones.resx">
+      <DependentUpon>Instrucciones.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
     </EmbeddedResource>
