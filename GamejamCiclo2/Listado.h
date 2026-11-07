@@ -105,9 +105,6 @@ namespace GamejamCiclo2 {
 			this->btnBuscar = (gcnew System::Windows::Forms::Button());
 			this->btnLimpiar = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->lblTotal = (gcnew System::Windows::Forms::Label());
-			this->lblVerificados = (gcnew System::Windows::Forms::Label());
-			this->lblNoVerificados = (gcnew System::Windows::Forms::Label());
 			this->Numero = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Fecha = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Curso = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -115,6 +112,9 @@ namespace GamejamCiclo2 {
 			this->Herramienta = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Consulta = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Validado = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->lblTotal = (gcnew System::Windows::Forms::Label());
+			this->lblVerificados = (gcnew System::Windows::Forms::Label());
+			this->lblNoVerificados = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -215,44 +215,12 @@ namespace GamejamCiclo2 {
 			});
 			this->dataGridView1->Location = System::Drawing::Point(12, 76);
 			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->RowHeadersVisible = false;
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(860, 72);
+			this->dataGridView1->Size = System::Drawing::Size(860, 376);
 			this->dataGridView1->TabIndex = 36;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Listado::dataGridView1_CellContentClick);
-			// 
-			// lblTotal
-			// 
-			this->lblTotal->AutoSize = true;
-			this->lblTotal->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->lblTotal->Location = System::Drawing::Point(12, 484);
-			this->lblTotal->Name = L"lblTotal";
-			this->lblTotal->Size = System::Drawing::Size(161, 22);
-			this->lblTotal->TabIndex = 37;
-			this->lblTotal->Text = L"Total de Registros:";
-			// 
-			// lblVerificados
-			// 
-			this->lblVerificados->AutoSize = true;
-			this->lblVerificados->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->lblVerificados->Location = System::Drawing::Point(248, 484);
-			this->lblVerificados->Name = L"lblVerificados";
-			this->lblVerificados->Size = System::Drawing::Size(107, 22);
-			this->lblVerificados->TabIndex = 38;
-			this->lblVerificados->Text = L"Verificados:";
-			// 
-			// lblNoVerificados
-			// 
-			this->lblNoVerificados->AutoSize = true;
-			this->lblNoVerificados->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->lblNoVerificados->Location = System::Drawing::Point(484, 484);
-			this->lblNoVerificados->Name = L"lblNoVerificados";
-			this->lblNoVerificados->Size = System::Drawing::Size(136, 22);
-			this->lblNoVerificados->TabIndex = 39;
-			this->lblNoVerificados->Text = L"No Verificados:";
 			// 
 			// Numero
 			// 
@@ -287,6 +255,7 @@ namespace GamejamCiclo2 {
 			this->Herramienta->HeaderText = L"Herramienta";
 			this->Herramienta->MinimumWidth = 6;
 			this->Herramienta->Name = L"Herramienta";
+			this->Herramienta->Width = 125;
 			// 
 			// Consulta
 			// 
@@ -301,6 +270,39 @@ namespace GamejamCiclo2 {
 			this->Validado->MinimumWidth = 6;
 			this->Validado->Name = L"Validado";
 			this->Validado->Width = 80;
+			// 
+			// lblTotal
+			// 
+			this->lblTotal->AutoSize = true;
+			this->lblTotal->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblTotal->Location = System::Drawing::Point(12, 484);
+			this->lblTotal->Name = L"lblTotal";
+			this->lblTotal->Size = System::Drawing::Size(161, 22);
+			this->lblTotal->TabIndex = 37;
+			this->lblTotal->Text = L"Total de Registros:";
+			// 
+			// lblVerificados
+			// 
+			this->lblVerificados->AutoSize = true;
+			this->lblVerificados->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblVerificados->Location = System::Drawing::Point(248, 484);
+			this->lblVerificados->Name = L"lblVerificados";
+			this->lblVerificados->Size = System::Drawing::Size(107, 22);
+			this->lblVerificados->TabIndex = 38;
+			this->lblVerificados->Text = L"Verificados:";
+			// 
+			// lblNoVerificados
+			// 
+			this->lblNoVerificados->AutoSize = true;
+			this->lblNoVerificados->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblNoVerificados->Location = System::Drawing::Point(484, 484);
+			this->lblNoVerificados->Name = L"lblNoVerificados";
+			this->lblNoVerificados->Size = System::Drawing::Size(136, 22);
+			this->lblNoVerificados->TabIndex = 39;
+			this->lblNoVerificados->Text = L"No Verificados:";
 			// 
 			// Listado
 			// 

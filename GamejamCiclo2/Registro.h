@@ -311,6 +311,7 @@ namespace GamejamCiclo2 {
 			this->btnDetalles->TabIndex = 39;
 			this->btnDetalles->Text = L"Ver Deatalles ->";
 			this->btnDetalles->UseVisualStyleBackColor = true;
+			this->btnDetalles->Click += gcnew System::EventHandler(this, &Registro::btnDetalles_Click_1);
 			// 
 			// cbValidacion
 			// 
@@ -395,6 +396,10 @@ private: System::Void btnLimpiar_Click(System::Object^ sender, System::EventArgs
 	tbResultado->Text = "";
 	cbValidacion->Text = "";
 	monthCalendar1->SelectionStart = DateTime::Today;
+}
+private: System::Void btnDetalles_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	Listado^ frm = gcnew Listado();
+	frm->ShowDialog();
 }
 };
 	
