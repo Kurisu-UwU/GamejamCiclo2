@@ -1,5 +1,7 @@
 #pragma once
 #include "ControladoraDeDatos.h"
+#include "Registro.h"
+
 namespace GamejamCiclo2 {
 
 	using namespace System;
@@ -34,12 +36,26 @@ namespace GamejamCiclo2 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^ bntGuardar;
+	private: System::Windows::Forms::Button^ btnRegistro;
 	protected:
-	private: System::Windows::Forms::Button^ btnLimpiar;
-	private: System::Windows::Forms::Button^ btnGeneraDatos;
-	private: System::Windows::Forms::Button^ btnVerDetalle;
-	private: System::Windows::Forms::TextBox^ txtBoxQueConsultamos;
+
+	protected:
+
+
+
+	private: System::Windows::Forms::Label^ lblMenu;
+	private: System::Windows::Forms::Button^ btnAnalisis;
+	private: System::Windows::Forms::Button^ btnDB1;
+	private: System::Windows::Forms::Button^ btnDB2;
+	private: System::Windows::Forms::Button^ btnDB3;
+	private: System::Windows::Forms::Button^ btnInstrucciones;
+	private: System::Windows::Forms::Button^ btnCreadores;
+	private: System::Windows::Forms::Button^ btnSalir;
+
+
+
+
+
 
 	private:
 		/// <summary>
@@ -54,68 +70,135 @@ namespace GamejamCiclo2 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->bntGuardar = (gcnew System::Windows::Forms::Button());
-			this->btnLimpiar = (gcnew System::Windows::Forms::Button());
-			this->btnGeneraDatos = (gcnew System::Windows::Forms::Button());
-			this->btnVerDetalle = (gcnew System::Windows::Forms::Button());
-			this->txtBoxQueConsultamos = (gcnew System::Windows::Forms::TextBox());
+			this->btnRegistro = (gcnew System::Windows::Forms::Button());
+			this->lblMenu = (gcnew System::Windows::Forms::Label());
+			this->btnAnalisis = (gcnew System::Windows::Forms::Button());
+			this->btnDB1 = (gcnew System::Windows::Forms::Button());
+			this->btnDB2 = (gcnew System::Windows::Forms::Button());
+			this->btnDB3 = (gcnew System::Windows::Forms::Button());
+			this->btnInstrucciones = (gcnew System::Windows::Forms::Button());
+			this->btnCreadores = (gcnew System::Windows::Forms::Button());
+			this->btnSalir = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
-			// bntGuardar
+			// btnRegistro
 			// 
-			this->bntGuardar->Location = System::Drawing::Point(39, 461);
-			this->bntGuardar->Name = L"bntGuardar";
-			this->bntGuardar->Size = System::Drawing::Size(75, 23);
-			this->bntGuardar->TabIndex = 0;
-			this->bntGuardar->Text = L"Guardar";
-			this->bntGuardar->UseVisualStyleBackColor = true;
+			this->btnRegistro->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnRegistro->Location = System::Drawing::Point(13, 69);
+			this->btnRegistro->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btnRegistro->Name = L"btnRegistro";
+			this->btnRegistro->Size = System::Drawing::Size(261, 57);
+			this->btnRegistro->TabIndex = 2;
+			this->btnRegistro->Text = L"Registro de Bitácora";
+			this->btnRegistro->UseVisualStyleBackColor = true;
+			this->btnRegistro->Click += gcnew System::EventHandler(this, &MyForm::btnRegistro_Click);
 			// 
-			// btnLimpiar
+			// lblMenu
 			// 
-			this->btnLimpiar->Location = System::Drawing::Point(178, 461);
-			this->btnLimpiar->Name = L"btnLimpiar";
-			this->btnLimpiar->Size = System::Drawing::Size(75, 23);
-			this->btnLimpiar->TabIndex = 1;
-			this->btnLimpiar->Text = L"Limpiar";
-			this->btnLimpiar->UseVisualStyleBackColor = true;
+			this->lblMenu->AutoSize = true;
+			this->lblMenu->Font = (gcnew System::Drawing::Font(L"Times New Roman", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblMenu->Location = System::Drawing::Point(13, 13);
+			this->lblMenu->Name = L"lblMenu";
+			this->lblMenu->Size = System::Drawing::Size(259, 32);
+			this->lblMenu->TabIndex = 5;
+			this->lblMenu->Text = L"MENÚ PRINCIPAL";
 			// 
-			// btnGeneraDatos
+			// btnAnalisis
 			// 
-			this->btnGeneraDatos->Location = System::Drawing::Point(293, 461);
-			this->btnGeneraDatos->Name = L"btnGeneraDatos";
-			this->btnGeneraDatos->Size = System::Drawing::Size(145, 23);
-			this->btnGeneraDatos->TabIndex = 2;
-			this->btnGeneraDatos->Text = L"Generar datos aleatorios";
-			this->btnGeneraDatos->UseVisualStyleBackColor = true;
+			this->btnAnalisis->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnAnalisis->Location = System::Drawing::Point(331, 69);
+			this->btnAnalisis->Margin = System::Windows::Forms::Padding(4);
+			this->btnAnalisis->Name = L"btnAnalisis";
+			this->btnAnalisis->Size = System::Drawing::Size(261, 57);
+			this->btnAnalisis->TabIndex = 6;
+			this->btnAnalisis->Text = L"Detalle y Análisis";
+			this->btnAnalisis->UseVisualStyleBackColor = true;
 			// 
-			// btnVerDetalle
+			// btnDB1
 			// 
-			this->btnVerDetalle->Location = System::Drawing::Point(653, 461);
-			this->btnVerDetalle->Name = L"btnVerDetalle";
-			this->btnVerDetalle->Size = System::Drawing::Size(145, 23);
-			this->btnVerDetalle->TabIndex = 3;
-			this->btnVerDetalle->Text = L"Ver Detalle";
-			this->btnVerDetalle->UseVisualStyleBackColor = true;
+			this->btnDB1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnDB1->Location = System::Drawing::Point(649, 69);
+			this->btnDB1->Margin = System::Windows::Forms::Padding(4);
+			this->btnDB1->Name = L"btnDB1";
+			this->btnDB1->Size = System::Drawing::Size(261, 57);
+			this->btnDB1->TabIndex = 7;
+			this->btnDB1->Text = L"DashBoard 1";
+			this->btnDB1->UseVisualStyleBackColor = true;
 			// 
-			// txtBoxQueConsultamos
+			// btnDB2
 			// 
-			this->txtBoxQueConsultamos->Location = System::Drawing::Point(94, 139);
+			this->btnDB2->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnDB2->Location = System::Drawing::Point(13, 185);
+			this->btnDB2->Margin = System::Windows::Forms::Padding(4);
+			this->btnDB2->Name = L"btnDB2";
+			this->btnDB2->Size = System::Drawing::Size(261, 57);
+			this->btnDB2->TabIndex = 8;
+			this->btnDB2->Text = L"DashBoard 2";
+			this->btnDB2->UseVisualStyleBackColor = true;
+			// 
+			// btnDB3
+			// 
+			this->btnDB3->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnDB3->Location = System::Drawing::Point(331, 185);
+			this->btnDB3->Margin = System::Windows::Forms::Padding(4);
+			this->btnDB3->Name = L"btnDB3";
+			this->btnDB3->Size = System::Drawing::Size(261, 57);
+			this->btnDB3->TabIndex = 9;
+			this->btnDB3->Text = L"DashBoard 3";
+			this->btnDB3->UseVisualStyleBackColor = true;
+			// 
+			// btnInstrucciones
+			// 
+			this->btnInstrucciones->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnInstrucciones->Location = System::Drawing::Point(649, 185);
+			this->btnInstrucciones->Margin = System::Windows::Forms::Padding(4);
+			this->btnInstrucciones->Name = L"btnInstrucciones";
+			this->btnInstrucciones->Size = System::Drawing::Size(261, 57);
+			this->btnInstrucciones->TabIndex = 10;
+			this->btnInstrucciones->Text = L"Instrucciones";
+			this->btnInstrucciones->UseVisualStyleBackColor = true;
+			// 
+			// btnCreadores
+			// 
+			this->btnCreadores->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnCreadores->Location = System::Drawing::Point(13, 301);
+			this->btnCreadores->Margin = System::Windows::Forms::Padding(4);
+			this->btnCreadores->Name = L"btnCreadores";
+			this->btnCreadores->Size = System::Drawing::Size(261, 57);
+			this->btnCreadores->TabIndex = 11;
+			this->btnCreadores->Text = L"Creadores";
+			this->btnCreadores->UseVisualStyleBackColor = true;
+			// 
+			// btnSalir
+			// 
+			this->txtBoxQueConsultamos->Location = System::Drawing::Point(157, 115);
 			this->txtBoxQueConsultamos->Name = L"txtBoxQueConsultamos";
-			this->txtBoxQueConsultamos->Size = System::Drawing::Size(261, 20);
+			this->txtBoxQueConsultamos->Size = System::Drawing::Size(246, 20);
 			this->txtBoxQueConsultamos->TabIndex = 4;
-			this->txtBoxQueConsultamos->Text = L"Como recorrer un vector sin usar Listas";
 			// 
 			// MyForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(838, 543);
-			this->Controls->Add(this->txtBoxQueConsultamos);
-			this->Controls->Add(this->btnVerDetalle);
-			this->Controls->Add(this->btnGeneraDatos);
-			this->Controls->Add(this->btnLimpiar);
-			this->Controls->Add(this->bntGuardar);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->ClientSize = System::Drawing::Size(1041, 435);
+			this->Controls->Add(this->btnSalir);
+			this->Controls->Add(this->btnCreadores);
+			this->Controls->Add(this->btnInstrucciones);
+			this->Controls->Add(this->btnDB3);
+			this->Controls->Add(this->btnDB2);
+			this->Controls->Add(this->btnDB1);
+			this->Controls->Add(this->btnAnalisis);
+			this->Controls->Add(this->lblMenu);
+			this->Controls->Add(this->btnRegistro);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"MyForm";
 			this->Text = L"AI-TRACE | Registro de Bitácora de uso IA";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
@@ -127,5 +210,9 @@ namespace GamejamCiclo2 {
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 
 	}
-	};
+	private: System::Void btnRegistro_Click(System::Object^ sender, System::EventArgs^ e) {
+		Registro^ frm = gcnew Registro();
+		frm->ShowDialog();
+	}
+};
 }
