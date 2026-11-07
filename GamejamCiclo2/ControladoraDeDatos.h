@@ -1,12 +1,12 @@
 #pragma once
 #include "RegistroClase.h";
 
-class GeneradorDeArchivos {
+class ControladoraDeDatos {
 private:
-	vector<Registro> registros;
+	vector<DatosRegistro> registros;
 public:
-	GeneradorDeArchivos(int cant) {};
-	~GeneradorDeArchivos() {};
+	ControladoraDeDatos() {};
+	~ControladoraDeDatos() {};
 	//Setters y getters
 
 
@@ -14,7 +14,7 @@ public:
 
 	void GenerarDatoNuevo() {
 		int n = registros.size() + 1;
-		Registro* r = new Registro(n);
+		DatosRegistro* r = new DatosRegistro(n);
 		registros.push_back(*r);
 		r->GenerarArchivo();
 	}

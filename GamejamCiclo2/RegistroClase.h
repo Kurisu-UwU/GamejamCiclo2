@@ -6,16 +6,16 @@
 
 using namespace std;
 
-class Registro {
+class DatosRegistro {
 private:
 	int numero;
 public:
-	Registro(int num) { numero = num; };
-	~Registro() {};	
+	DatosRegistro(int num) { numero = num; };
+	~DatosRegistro() {};	
 	int getNumero() { return numero; }
 
 	void GenerarArchivo() {
-		string name = "Registro_";
+		string name = "DatosRegistro_";
 		name += to_string(this->numero);
 		ofstream my_file;
 		my_file.open(name);

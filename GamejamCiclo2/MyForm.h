@@ -1,5 +1,4 @@
 #pragma once
-#include "ControladoraDeDatos.h"
 #include "Registro.h"
 
 namespace GamejamCiclo2 {
@@ -23,6 +22,7 @@ namespace GamejamCiclo2 {
 			//
 			//TODO: Add the constructor code here
 			//
+			controladora = new ControladoraDeDatos();
 		}
 
 	protected:
@@ -57,11 +57,13 @@ namespace GamejamCiclo2 {
 
 
 
+
 	private:
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
+		ControladoraDeDatos* controladora;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -85,10 +87,9 @@ namespace GamejamCiclo2 {
 			// 
 			this->btnRegistro->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnRegistro->Location = System::Drawing::Point(13, 69);
-			this->btnRegistro->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btnRegistro->Location = System::Drawing::Point(10, 56);
 			this->btnRegistro->Name = L"btnRegistro";
-			this->btnRegistro->Size = System::Drawing::Size(261, 57);
+			this->btnRegistro->Size = System::Drawing::Size(196, 46);
 			this->btnRegistro->TabIndex = 2;
 			this->btnRegistro->Text = L"Registro de Bitácora";
 			this->btnRegistro->UseVisualStyleBackColor = true;
@@ -99,9 +100,10 @@ namespace GamejamCiclo2 {
 			this->lblMenu->AutoSize = true;
 			this->lblMenu->Font = (gcnew System::Drawing::Font(L"Times New Roman", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblMenu->Location = System::Drawing::Point(13, 13);
+			this->lblMenu->Location = System::Drawing::Point(10, 11);
+			this->lblMenu->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->lblMenu->Name = L"lblMenu";
-			this->lblMenu->Size = System::Drawing::Size(259, 32);
+			this->lblMenu->Size = System::Drawing::Size(206, 25);
 			this->lblMenu->TabIndex = 5;
 			this->lblMenu->Text = L"MENÚ PRINCIPAL";
 			// 
@@ -109,10 +111,9 @@ namespace GamejamCiclo2 {
 			// 
 			this->btnAnalisis->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnAnalisis->Location = System::Drawing::Point(331, 69);
-			this->btnAnalisis->Margin = System::Windows::Forms::Padding(4);
+			this->btnAnalisis->Location = System::Drawing::Point(248, 56);
 			this->btnAnalisis->Name = L"btnAnalisis";
-			this->btnAnalisis->Size = System::Drawing::Size(261, 57);
+			this->btnAnalisis->Size = System::Drawing::Size(196, 46);
 			this->btnAnalisis->TabIndex = 6;
 			this->btnAnalisis->Text = L"Detalle y Análisis";
 			this->btnAnalisis->UseVisualStyleBackColor = true;
@@ -121,10 +122,9 @@ namespace GamejamCiclo2 {
 			// 
 			this->btnDB1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnDB1->Location = System::Drawing::Point(649, 69);
-			this->btnDB1->Margin = System::Windows::Forms::Padding(4);
+			this->btnDB1->Location = System::Drawing::Point(487, 56);
 			this->btnDB1->Name = L"btnDB1";
-			this->btnDB1->Size = System::Drawing::Size(261, 57);
+			this->btnDB1->Size = System::Drawing::Size(196, 46);
 			this->btnDB1->TabIndex = 7;
 			this->btnDB1->Text = L"DashBoard 1";
 			this->btnDB1->UseVisualStyleBackColor = true;
@@ -133,10 +133,9 @@ namespace GamejamCiclo2 {
 			// 
 			this->btnDB2->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnDB2->Location = System::Drawing::Point(13, 185);
-			this->btnDB2->Margin = System::Windows::Forms::Padding(4);
+			this->btnDB2->Location = System::Drawing::Point(10, 150);
 			this->btnDB2->Name = L"btnDB2";
-			this->btnDB2->Size = System::Drawing::Size(261, 57);
+			this->btnDB2->Size = System::Drawing::Size(196, 46);
 			this->btnDB2->TabIndex = 8;
 			this->btnDB2->Text = L"DashBoard 2";
 			this->btnDB2->UseVisualStyleBackColor = true;
@@ -145,10 +144,9 @@ namespace GamejamCiclo2 {
 			// 
 			this->btnDB3->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnDB3->Location = System::Drawing::Point(331, 185);
-			this->btnDB3->Margin = System::Windows::Forms::Padding(4);
+			this->btnDB3->Location = System::Drawing::Point(248, 150);
 			this->btnDB3->Name = L"btnDB3";
-			this->btnDB3->Size = System::Drawing::Size(261, 57);
+			this->btnDB3->Size = System::Drawing::Size(196, 46);
 			this->btnDB3->TabIndex = 9;
 			this->btnDB3->Text = L"DashBoard 3";
 			this->btnDB3->UseVisualStyleBackColor = true;
@@ -157,10 +155,9 @@ namespace GamejamCiclo2 {
 			// 
 			this->btnInstrucciones->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnInstrucciones->Location = System::Drawing::Point(649, 185);
-			this->btnInstrucciones->Margin = System::Windows::Forms::Padding(4);
+			this->btnInstrucciones->Location = System::Drawing::Point(487, 150);
 			this->btnInstrucciones->Name = L"btnInstrucciones";
-			this->btnInstrucciones->Size = System::Drawing::Size(261, 57);
+			this->btnInstrucciones->Size = System::Drawing::Size(196, 46);
 			this->btnInstrucciones->TabIndex = 10;
 			this->btnInstrucciones->Text = L"Instrucciones";
 			this->btnInstrucciones->UseVisualStyleBackColor = true;
@@ -169,23 +166,26 @@ namespace GamejamCiclo2 {
 			// 
 			this->btnCreadores->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnCreadores->Location = System::Drawing::Point(13, 301);
-			this->btnCreadores->Margin = System::Windows::Forms::Padding(4);
+			this->btnCreadores->Location = System::Drawing::Point(10, 245);
 			this->btnCreadores->Name = L"btnCreadores";
-			this->btnCreadores->Size = System::Drawing::Size(261, 57);
+			this->btnCreadores->Size = System::Drawing::Size(196, 46);
 			this->btnCreadores->TabIndex = 11;
 			this->btnCreadores->Text = L"Creadores";
 			this->btnCreadores->UseVisualStyleBackColor = true;
 			// 
 			// btnSalir
 			// 
-
+			this->btnSalir->Location = System::Drawing::Point(0, 0);
+			this->btnSalir->Margin = System::Windows::Forms::Padding(2);
+			this->btnSalir->Name = L"btnSalir";
+			this->btnSalir->Size = System::Drawing::Size(56, 19);
+			this->btnSalir->TabIndex = 0;
 			// 
 			// MyForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1041, 435);
+			this->ClientSize = System::Drawing::Size(781, 353);
 			this->Controls->Add(this->btnSalir);
 			this->Controls->Add(this->btnCreadores);
 			this->Controls->Add(this->btnInstrucciones);
@@ -195,7 +195,7 @@ namespace GamejamCiclo2 {
 			this->Controls->Add(this->btnAnalisis);
 			this->Controls->Add(this->lblMenu);
 			this->Controls->Add(this->btnRegistro);
-			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"MyForm";
 			this->Text = L"AI-TRACE | Registro de Bitácora de uso IA";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
@@ -208,8 +208,8 @@ namespace GamejamCiclo2 {
 
 	}
 	private: System::Void btnRegistro_Click(System::Object^ sender, System::EventArgs^ e) {
-		Registro^ frm = gcnew Registro();
+		Registro^ frm = gcnew Registro(controladora);
 		frm->ShowDialog();
 	}
-};
+	};
 }
