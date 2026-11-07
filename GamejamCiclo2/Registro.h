@@ -50,7 +50,7 @@ namespace GamejamCiclo2 {
 	private: System::Windows::Forms::Label^ lblCategoria;
 	private: System::Windows::Forms::Label^ lblCurso;
 	private: System::Windows::Forms::Label^ lblFecha;
-	private: System::Windows::Forms::TextBox^ tbValidacion;
+
 	private: System::Windows::Forms::Label^ lblValidacion;
 	private: System::Windows::Forms::TextBox^ tbCambio;
 	private: System::Windows::Forms::Label^ lblCambio;
@@ -66,6 +66,7 @@ namespace GamejamCiclo2 {
 		/// Variable del diseñador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
+	private: System::Windows::Forms::ComboBox^ cbValidacion;
 
 		   ControladoraDeDatos* controladora2;
 
@@ -88,7 +89,6 @@ namespace GamejamCiclo2 {
 			this->lblCategoria = (gcnew System::Windows::Forms::Label());
 			this->lblCurso = (gcnew System::Windows::Forms::Label());
 			this->lblFecha = (gcnew System::Windows::Forms::Label());
-			this->tbValidacion = (gcnew System::Windows::Forms::TextBox());
 			this->lblValidacion = (gcnew System::Windows::Forms::Label());
 			this->tbCambio = (gcnew System::Windows::Forms::TextBox());
 			this->lblCambio = (gcnew System::Windows::Forms::Label());
@@ -96,6 +96,7 @@ namespace GamejamCiclo2 {
 			this->btnLimpiar = (gcnew System::Windows::Forms::Button());
 			this->btnAleatorio = (gcnew System::Windows::Forms::Button());
 			this->btnDetalles = (gcnew System::Windows::Forms::Button());
+			this->cbValidacion = (gcnew System::Windows::Forms::ComboBox());
 			this->SuspendLayout();
 			// 
 			// tbResultado
@@ -229,16 +230,6 @@ namespace GamejamCiclo2 {
 			this->lblFecha->TabIndex = 20;
 			this->lblFecha->Text = L"Fecha:";
 			// 
-			// tbValidacion
-			// 
-			this->tbValidacion->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->tbValidacion->Location = System::Drawing::Point(544, 343);
-			this->tbValidacion->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->tbValidacion->Name = L"tbValidacion";
-			this->tbValidacion->Size = System::Drawing::Size(480, 30);
-			this->tbValidacion->TabIndex = 35;
-			// 
 			// lblValidacion
 			// 
 			this->lblValidacion->AutoSize = true;
@@ -321,16 +312,29 @@ namespace GamejamCiclo2 {
 			this->btnDetalles->Text = L"Ver Deatalles ->";
 			this->btnDetalles->UseVisualStyleBackColor = true;
 			// 
+			// cbValidacion
+			// 
+			this->cbValidacion->FormattingEnabled = true;
+			this->cbValidacion->Items->AddRange(gcnew cli::array< System::Object^  >(4) {
+				L"Compilacion en Visual studio", L"Verificacion mediante ejemplos",
+					L"Respaldo por fuentes confiables", L"No se valido"
+			});
+			this->cbValidacion->Location = System::Drawing::Point(548, 349);
+			this->cbValidacion->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->cbValidacion->Name = L"cbValidacion";
+			this->cbValidacion->Size = System::Drawing::Size(476, 24);
+			this->cbValidacion->TabIndex = 40;
+			// 
 			// Registro
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1051, 458);
+			this->Controls->Add(this->cbValidacion);
 			this->Controls->Add(this->btnDetalles);
 			this->Controls->Add(this->btnAleatorio);
 			this->Controls->Add(this->btnLimpiar);
 			this->Controls->Add(this->btnGuardar);
-			this->Controls->Add(this->tbValidacion);
 			this->Controls->Add(this->lblValidacion);
 			this->Controls->Add(this->tbCambio);
 			this->Controls->Add(this->lblCambio);
@@ -375,7 +379,7 @@ private: System::Void btnGuardar_Click(System::Object^ sender, System::EventArgs
 	String^ consulta = tbConsulta->Text;
 	String^ resultado = tbResultado->Text;
 	String^ cambio = tbCambio->Text;
-	String^ valido = tbValidacion->Text;
+	String^ valido = cbValidacion->Text;
 	controladora2->GenerarDatoNuevo(Transformer(consulta),Transformer(resultado), Transformer(cambio), Transformer(valido));
 }
 	private: System::Void btnDetalles_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -389,7 +393,7 @@ private: System::Void btnLimpiar_Click(System::Object^ sender, System::EventArgs
 	tbConsulta->Text = "";
 	tbCambio->Text = "";
 	tbResultado->Text = "";
-	tbValidacion->Text = "";
+	cbValidacion->Text = "";
 	monthCalendar1->SelectionStart = DateTime::Today;
 }
 };
