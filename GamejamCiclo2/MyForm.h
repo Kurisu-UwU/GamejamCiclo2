@@ -205,7 +205,7 @@ namespace GamejamCiclo2 {
 		}
 #pragma endregion
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-
+		controladora->SetCantRegistros(0);
 	}
 	private: System::Void btnRegistro_Click(System::Object^ sender, System::EventArgs^ e) {
 		Registro^ frm = gcnew Registro(controladora);

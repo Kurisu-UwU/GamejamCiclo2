@@ -21,7 +21,7 @@ namespace GamejamCiclo2 {
 			//
 			//TODO: agregar código de constructor aquí
 			//
-			this->controladora = controladora;
+			controladora2 = controladora;
 		}
 
 	protected:
@@ -63,7 +63,7 @@ namespace GamejamCiclo2 {
 		/// Variable del diseñador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
-		ControladoraDeDatos* controladora;
+		ControladoraDeDatos* controladora2;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -125,6 +125,7 @@ namespace GamejamCiclo2 {
 			this->tbConsulta->Name = L"tbConsulta";
 			this->tbConsulta->Size = System::Drawing::Size(361, 26);
 			this->tbConsulta->TabIndex = 29;
+			this->tbConsulta->TextChanged += gcnew System::EventHandler(this, &Registro::tbConsulta_TextChanged);
 			// 
 			// lblConsulta
 			// 
@@ -277,6 +278,7 @@ namespace GamejamCiclo2 {
 			this->btnGuardar->TabIndex = 36;
 			this->btnGuardar->Text = L"Guardar";
 			this->btnGuardar->UseVisualStyleBackColor = true;
+			this->btnGuardar->Click += gcnew System::EventHandler(this, &Registro::btnGuardar_Click);
 			// 
 			// btnLimpiar
 			// 
@@ -349,10 +351,28 @@ namespace GamejamCiclo2 {
 
 		}
 #pragma endregion
+	public: 
+		string Transformer(String^ trans) {
+			const char* consul = (const char*)(System::Runtime::   // resultado de gemini
+				InteropServices::Marshal::StringToHGlobalAnsi(trans)).ToPointer();
+			std::string contenido(consul);
+			System::Runtime::InteropServices::Marshal::
+				FreeHGlobal(System::IntPtr((void*)consul));
+			return consul;
+		}
 	private: System::Void Registro_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void btnAleatorio_Click(System::Object^ sender, System::EventArgs^ e) {
 
+}
+private: System::Void tbConsulta_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void btnGuardar_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ consulta = tbConsulta->Text;
+	String^ resultado = tbResultado->Text;
+	String^ cambio = tbCambio->Text;
+	String^ valido = tbValidacion->Text;
+	controladora2->GenerarDatoNuevo(Transformer(consulta),Transformer(resultado), Transformer(cambio), Transformer(valido));
 }
 };
 }
