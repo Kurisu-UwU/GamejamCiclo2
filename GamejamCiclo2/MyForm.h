@@ -87,7 +87,8 @@ namespace GamejamCiclo2 {
 			// 
 			this->btnRegistro->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnRegistro->Location = System::Drawing::Point(10, 56);
+			this->btnRegistro->Location = System::Drawing::Point(13, 69);
+			this->btnRegistro->Margin = System::Windows::Forms::Padding(4);
 			this->btnRegistro->Name = L"btnRegistro";
 			this->btnRegistro->Size = System::Drawing::Size(196, 46);
 			this->btnRegistro->TabIndex = 2;
@@ -117,6 +118,7 @@ namespace GamejamCiclo2 {
 			this->btnAnalisis->TabIndex = 6;
 			this->btnAnalisis->Text = L"Detalle y Análisis";
 			this->btnAnalisis->UseVisualStyleBackColor = true;
+			this->btnAnalisis->Click += gcnew System::EventHandler(this, &MyForm::btnAnalisis_Click);
 			// 
 			// btnDB1
 			// 
@@ -176,9 +178,8 @@ namespace GamejamCiclo2 {
 			// btnSalir
 			// 
 			this->btnSalir->Location = System::Drawing::Point(0, 0);
-			this->btnSalir->Margin = System::Windows::Forms::Padding(2);
 			this->btnSalir->Name = L"btnSalir";
-			this->btnSalir->Size = System::Drawing::Size(56, 19);
+			this->btnSalir->Size = System::Drawing::Size(75, 23);
 			this->btnSalir->TabIndex = 0;
 			// 
 			// MyForm
@@ -211,5 +212,9 @@ namespace GamejamCiclo2 {
 		Registro^ frm = gcnew Registro(controladora);
 		frm->ShowDialog();
 	}
-	};
+private: System::Void btnAnalisis_Click(System::Object^ sender, System::EventArgs^ e) {
+	Listado^ frm = gcnew Listado();
+	frm->ShowDialog();
+}
+};
 }

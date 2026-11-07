@@ -1,5 +1,7 @@
 #pragma once
 #include "ControladoraDeDatos.h"
+#include "Listado.h"
+
 namespace GamejamCiclo2 {
 
 	using namespace System;
@@ -55,7 +57,8 @@ namespace GamejamCiclo2 {
 	private: System::Windows::Forms::Button^ btnGuardar;
 	private: System::Windows::Forms::Button^ btnLimpiar;
 	private: System::Windows::Forms::Button^ btnAleatorio;
-	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ btnDetalles;
+
 
 
 	private:
@@ -91,7 +94,7 @@ namespace GamejamCiclo2 {
 			this->btnGuardar = (gcnew System::Windows::Forms::Button());
 			this->btnLimpiar = (gcnew System::Windows::Forms::Button());
 			this->btnAleatorio = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->btnDetalles = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// tbResultado
@@ -141,6 +144,8 @@ namespace GamejamCiclo2 {
 			// cbHerramienta
 			// 
 			this->cbHerramienta->FormattingEnabled = true;
+			this->cbHerramienta->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Gemini", L"Chat gpt", L"Claude", L"Copilot" });
+			this->cbHerramienta->Location = System::Drawing::Point(12, 158);
 			this->cbHerramienta->Location = System::Drawing::Point(9, 128);
 			this->cbHerramienta->Margin = System::Windows::Forms::Padding(2);
 			this->cbHerramienta->Name = L"cbHerramienta";
@@ -159,6 +164,11 @@ namespace GamejamCiclo2 {
 			// cbCurso
 			// 
 			this->cbCurso->FormattingEnabled = true;
+			this->cbCurso->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
+				L"Cálculo I", L"Algoritmos", L"Organización y Dirección de Empresas",
+					L"Aplicaciones de ingeniería de Software", L"Seminario de Investigación Académica"
+			});
+			this->cbCurso->Location = System::Drawing::Point(12, 34);
 			this->cbCurso->Location = System::Drawing::Point(9, 78);
 			this->cbCurso->Margin = System::Windows::Forms::Padding(2);
 			this->cbCurso->Name = L"cbCurso";
@@ -168,6 +178,11 @@ namespace GamejamCiclo2 {
 			// cbCategoria
 			// 
 			this->cbCategoria->FormattingEnabled = true;
+			this->cbCategoria->Items->AddRange(gcnew cli::array< System::Object^  >(9) {
+				L"Tarea", L"Examen", L"LB1", L"EA1", L"EB1",
+					L"Reto", L"Proyecto", L"Consulta Conceptual", L"Depuración de errores"
+			});
+			this->cbCategoria->Location = System::Drawing::Point(12, 96);
 			this->cbCategoria->Location = System::Drawing::Point(9, 28);
 			this->cbCategoria->Margin = System::Windows::Forms::Padding(2);
 			this->cbCategoria->Name = L"cbCategoria";
@@ -303,9 +318,9 @@ namespace GamejamCiclo2 {
 			this->btnAleatorio->UseVisualStyleBackColor = true;
 			this->btnAleatorio->Click += gcnew System::EventHandler(this, &Registro::btnAleatorio_Click);
 			// 
-			// button1
+			// btnDetalles
 			// 
-			this->button1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->btnDetalles->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button1->Location = System::Drawing::Point(588, 323);
 			this->button1->Margin = System::Windows::Forms::Padding(2);
@@ -349,6 +364,11 @@ namespace GamejamCiclo2 {
 
 		}
 #pragma endregion
+	private: System::Void btnDetalles_Click(System::Object^ sender, System::EventArgs^ e) {
+		Listado^ frm = gcnew Listado();
+		frm->ShowDialog();
+	}
+};
 	private: System::Void Registro_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void btnAleatorio_Click(System::Object^ sender, System::EventArgs^ e) {
