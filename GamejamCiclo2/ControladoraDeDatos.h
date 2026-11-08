@@ -20,13 +20,18 @@ public:
 		r.GenerarArchivo(consulta, resultado, cambio, valido, cantregistros);
 		registros.push_back(r);
 
-		fstream archivoObj("DatosDeObjetos/Objetos.txt");
-		if (!archivoObj) {
-			archivoObj.open("DatosDeObjetos/Objetos.txt", ios::out);
+		fstream archivoObj("DatosDeObjetos/Objetos.txt", ios::app);
+		if (!archivoObj.is_open()) {
+			// error: ruta inválida o carpeta DatosDeObjetos inexistente
 		}
-		else {
-			archivoObj.open("DatosDeObjetos/Objetos.txt", ios::app);
+		if (archivoObj.is_open()) {
+			archivoObj << cantregistros << endl;
 		}
+
+	}
+	void AgregarDatoExistente(int n) {
+		DatosRegistro r(n);
+		registros.push_back(r);
 	}
 
 	void SetCantRegistros(int cant) {

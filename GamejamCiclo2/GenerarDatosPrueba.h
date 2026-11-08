@@ -74,9 +74,12 @@ namespace GamejamCiclo2 {
 			this->ClientSize = System::Drawing::Size(854, 534);
 			this->Name = L"GenerarDatosPrueba";
 			this->Text = L"GenerarDatosPrueba";
+			this->Load += gcnew System::EventHandler(this, &GenerarDatosPrueba::GenerarDatosPrueba_Load);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+	private: System::Void GenerarDatosPrueba_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
 	};
 }
