@@ -9,7 +9,7 @@ public:
 
 	void GenerarDatoNuevo(string fecha, string curso, string categoria, string herramienta, string consulta, string resultado, string cambio, string valido) {
 		bool esValido = false;
-		if (valido == "Compilacion en Visual studio" || valido == "Verificacion mediante ejemplos" || valido == "respaldo por fuentes confiables") {
+		if (valido == "Compilacion en Visual studio" || valido == "Verificacion mediante ejemplos" || valido == "Respaldo por fuentes confiables") {
 			esValido = true;
 		}
 		cantregistros++;

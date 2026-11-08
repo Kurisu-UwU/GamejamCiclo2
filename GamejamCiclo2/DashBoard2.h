@@ -27,8 +27,8 @@ namespace GamejamCiclo2 {
 			SolidBrush^ brush = gcnew SolidBrush(Color::Blue);
 			SolidBrush^ brush2 = gcnew SolidBrush(Color::Red);
 
-			e->Graphics->FillRectangle(brush, 80, 50+(100-a), 50, a);
-			e->Graphics->FillRectangle(brush2, 30, 50+(100-b), 50, b);
+			e->Graphics->FillRectangle(brush, 80, 120+(100-a), 50, a);
+			e->Graphics->FillRectangle(brush2, 30, 120+(100-b), 50, b);
 		}
 
 	protected:
@@ -50,6 +50,10 @@ namespace GamejamCiclo2 {
 		System::ComponentModel::Container^ components;
 	private: System::Windows::Forms::Label^ prueba1;
 	private: System::Windows::Forms::Label^ prueba2;
+	private: System::Windows::Forms::Label^ lblMenu;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ label3;
 		   ControladoraDeDatosParte2* controladora2;
 
 #pragma region Windows Form Designer generated code
@@ -61,12 +65,16 @@ namespace GamejamCiclo2 {
 		   {
 			   this->prueba1 = (gcnew System::Windows::Forms::Label());
 			   this->prueba2 = (gcnew System::Windows::Forms::Label());
+			   this->lblMenu = (gcnew System::Windows::Forms::Label());
+			   this->label1 = (gcnew System::Windows::Forms::Label());
+			   this->label2 = (gcnew System::Windows::Forms::Label());
+			   this->label3 = (gcnew System::Windows::Forms::Label());
 			   this->SuspendLayout();
 			   // 
 			   // prueba1
 			   // 
 			   this->prueba1->AutoSize = true;
-			   this->prueba1->Location = System::Drawing::Point(308, 87);
+			   this->prueba1->Location = System::Drawing::Point(200, 147);
 			   this->prueba1->Name = L"prueba1";
 			   this->prueba1->Size = System::Drawing::Size(35, 13);
 			   this->prueba1->TabIndex = 0;
@@ -75,17 +83,70 @@ namespace GamejamCiclo2 {
 			   // prueba2
 			   // 
 			   this->prueba2->AutoSize = true;
-			   this->prueba2->Location = System::Drawing::Point(308, 124);
+			   this->prueba2->Location = System::Drawing::Point(200, 184);
 			   this->prueba2->Name = L"prueba2";
 			   this->prueba2->Size = System::Drawing::Size(35, 13);
 			   this->prueba2->TabIndex = 1;
 			   this->prueba2->Text = L"label1";
 			   // 
+			   // lblMenu
+			   // 
+			   this->lblMenu->AutoSize = true;
+			   this->lblMenu->BackColor = System::Drawing::Color::PaleGreen;
+			   this->lblMenu->Font = (gcnew System::Drawing::Font(L"Times New Roman", 17.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->lblMenu->ForeColor = System::Drawing::Color::MediumSeaGreen;
+			   this->lblMenu->Location = System::Drawing::Point(11, 9);
+			   this->lblMenu->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			   this->lblMenu->Name = L"lblMenu";
+			   this->lblMenu->Size = System::Drawing::Size(298, 25);
+			   this->lblMenu->TabIndex = 6;
+			   this->lblMenu->Text = L"Verificacion de resultados IA";
+			   // 
+			   // label1
+			   // 
+			   this->label1->AutoSize = true;
+			   this->label1->BackColor = System::Drawing::SystemColors::ControlLightLight;
+			   this->label1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->label1->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			   this->label1->Location = System::Drawing::Point(11, 36);
+			   this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			   this->label1->Name = L"label1";
+			   this->label1->Size = System::Drawing::Size(400, 57);
+			   this->label1->TabIndex = 7;
+			   this->label1->Text = L"Una forma de interpretar el buen uso de la IA. \r\nen el siguiente gráfico se compa"
+				   L"ra la cantidad de consultas de IA \r\nque termiaron comparando y analizando los re"
+				   L"sultados\r\n";
+			   // 
+			   // label2
+			   // 
+			   this->label2->AutoSize = true;
+			   this->label2->Location = System::Drawing::Point(95, 235);
+			   this->label2->Name = L"label2";
+			   this->label2->Size = System::Drawing::Size(35, 13);
+			   this->label2->TabIndex = 9;
+			   this->label2->Text = L"label1";
+			   // 
+			   // label3
+			   // 
+			   this->label3->AutoSize = true;
+			   this->label3->Location = System::Drawing::Point(41, 235);
+			   this->label3->Name = L"label3";
+			   this->label3->Size = System::Drawing::Size(35, 13);
+			   this->label3->TabIndex = 8;
+			   this->label3->Text = L"label1";
+			   // 
 			   // DashBoard2
 			   // 
 			   this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			   this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			   this->BackColor = System::Drawing::SystemColors::Window;
 			   this->ClientSize = System::Drawing::Size(582, 414);
+			   this->Controls->Add(this->label2);
+			   this->Controls->Add(this->label3);
+			   this->Controls->Add(this->label1);
+			   this->Controls->Add(this->lblMenu);
 			   this->Controls->Add(this->prueba2);
 			   this->Controls->Add(this->prueba1);
 			   this->Name = L"DashBoard2";
@@ -106,6 +167,8 @@ namespace GamejamCiclo2 {
 				cantvalido++;
 			}
 		}
+		label2->Text = "" + (int)cantvalido;
+		label3->Text = "" + ((int)registros.size()-(int)cantvalido);
 		cantvalido = cantvalido * 100 / (float)registros.size();
 		prueba2->Text = "Pocentaje de registros validados: " + cantvalido + "%";
 	}

@@ -54,7 +54,7 @@ namespace GamejamCiclo2 {
 	private: System::Windows::Forms::Button^ btnDB3;
 	private: System::Windows::Forms::Button^ btnInstrucciones;
 	private: System::Windows::Forms::Button^ btnCreadores;
-	private: System::Windows::Forms::Button^ btnSalir;
+
 
 
 
@@ -84,7 +84,6 @@ namespace GamejamCiclo2 {
 			this->btnDB3 = (gcnew System::Windows::Forms::Button());
 			this->btnInstrucciones = (gcnew System::Windows::Forms::Button());
 			this->btnCreadores = (gcnew System::Windows::Forms::Button());
-			this->btnSalir = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// btnRegistro
@@ -92,7 +91,7 @@ namespace GamejamCiclo2 {
 			this->btnRegistro->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnRegistro->Location = System::Drawing::Point(10, 56);
-			this->btnRegistro->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btnRegistro->Margin = System::Windows::Forms::Padding(4);
 			this->btnRegistro->Name = L"btnRegistro";
 			this->btnRegistro->Size = System::Drawing::Size(196, 46);
 			this->btnRegistro->TabIndex = 2;
@@ -182,19 +181,11 @@ namespace GamejamCiclo2 {
 			this->btnCreadores->Text = L"Creadores";
 			this->btnCreadores->UseVisualStyleBackColor = true;
 			// 
-			// btnSalir
-			// 
-			this->btnSalir->Location = System::Drawing::Point(0, 0);
-			this->btnSalir->Name = L"btnSalir";
-			this->btnSalir->Size = System::Drawing::Size(75, 23);
-			this->btnSalir->TabIndex = 0;
-			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(781, 353);
-			this->Controls->Add(this->btnSalir);
 			this->Controls->Add(this->btnCreadores);
 			this->Controls->Add(this->btnInstrucciones);
 			this->Controls->Add(this->btnDB3);
@@ -203,7 +194,7 @@ namespace GamejamCiclo2 {
 			this->Controls->Add(this->btnAnalisis);
 			this->Controls->Add(this->lblMenu);
 			this->Controls->Add(this->btnRegistro);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"MyForm";
 			this->Text = L"AI-TRACE | Registro de Bitácora de uso IA";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
