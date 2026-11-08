@@ -1,4 +1,5 @@
 #pragma once
+#include "DatosTabla.h"
 
 namespace GamejamCiclo2 {
 
@@ -23,6 +24,27 @@ namespace GamejamCiclo2 {
 			//
 		}
 
+		void DibujarGraficoBarras(PaintEventArgs^ e) {
+			SolidBrush^ pincel1 = gcnew SolidBrush(Color::Red);
+			SolidBrush^ pincel2 = gcnew SolidBrush(Color::Blue);
+			SolidBrush^ pincel3 = gcnew SolidBrush(Color::Magenta);
+			SolidBrush^ pincel4 = gcnew SolidBrush(Color::Green);
+			SolidBrush^ pincel5 = gcnew SolidBrush(Color::Yellow);
+			SolidBrush^ pincel6 = gcnew SolidBrush(Color::Purple);
+			SolidBrush^ pincel7 = gcnew SolidBrush(Color::Orange);
+			SolidBrush^ pincel8 = gcnew SolidBrush(Color::GreenYellow);
+			SolidBrush^ pincel9 = gcnew SolidBrush(Color::Aqua);
+			e->Graphics->FillRectangle(pincel1, 50, 50 + 250 - 200, 30, 200);
+			e->Graphics->FillRectangle(pincel2, 50, 50 + 250 - 200, 30, 200);
+			e->Graphics->FillRectangle(pincel3, 100, 50 + 250 - 200, 30, 200);
+			e->Graphics->FillRectangle(pincel4, 150, 50 + 250 - 200, 30, 200);
+			e->Graphics->FillRectangle(pincel1, 200, 50 + 250 - 200, 30, 200);
+			e->Graphics->FillRectangle(pincel6, 250, 50 + 250 - 200, 30, 200);
+			e->Graphics->FillRectangle(pincel7, 300, 50 + 250 - 200, 30, 200);
+			e->Graphics->FillRectangle(pincel8, 350, 50 + 250 - 200, 30, 200);
+			e->Graphics->FillRectangle(pincel9, 400, 50 + 250 - 200, 30, 200);
+		}
+
 	protected:
 		/// <summary>
 		/// Limpiar los recursos que se estén usando.
@@ -34,6 +56,9 @@ namespace GamejamCiclo2 {
 				delete components;
 			}
 		}
+
+	protected:
+
 
 	private:
 		/// <summary>
@@ -52,17 +77,25 @@ namespace GamejamCiclo2 {
 			// 
 			// DashBoard1
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(284, 261);
+			this->ClientSize = System::Drawing::Size(1195, 531);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"DashBoard1";
 			this->Text = L"DashBoard1";
 			this->Load += gcnew System::EventHandler(this, &DashBoard1::DashBoard1_Load);
+			this->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &DashBoard1::DashBoard1_Paint);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
 	private: System::Void DashBoard1_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void DashBoard1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+		DibujarGraficoBarras(e);
+
+
+
 	}
 	};
 }
