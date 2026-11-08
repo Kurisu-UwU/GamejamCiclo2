@@ -50,7 +50,16 @@ public:
 	string getConsulta() { return consulta; }
 	string getResultado() { return resultado; }
 	string getCambio() { return cambio; }
-	bool getValidacion() { return validacion; }
+	string getValidacion() {
+		if (validacion == true) {
+			return "Si";
+		}
+		else {
+			return "No";
+		}
+	}
+
+
 
 	void GenerarArchivo(string fecha1, string curso1, string categoria1, string herramienta1, string consulta1, string resultado1, string cambio1, string valido1, int numeroarchivo) {
 		ofstream my_file;

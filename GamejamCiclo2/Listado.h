@@ -16,29 +16,37 @@ namespace GamejamCiclo2 {
 	public ref class Listado : public System::Windows::Forms::Form
 	{
 	public:
-		Listado(void)
+		Listado(ControladoraDeDatos* controladora)
 		{
 			InitializeComponent();
 			//
 			//TODO: agregar código de constructor aquí
 			//
+			controladora2 = controladora;
+			controladora2->ObtenerRegistros();
+			vector<DatosRegistro> registros = controladora2->ObtenerRegistros();
+			totalregistros = 0;
+			NoValidado = 0;
+			verificado = 0;
+			for (int i = 0; i < registros.size(); i++) {
+				dgvListado->Rows->Add(registros[i].getNumero(), gcnew System::String(registros[i].getFecha().c_str()), gcnew System::String(registros[i].getCurso().c_str()), gcnew System::String(registros[i].getCategoria().c_str()), gcnew System::String(registros[i].getHerramienta().c_str()), gcnew System::String(registros[i].getConsulta().c_str()), gcnew System::String(registros[i].getValidacion().c_str()));
+				totalregistros++;
+				if (gcnew System::String(registros[i].getValidacion().c_str()) == "Si") {
+					verificado++;
+				}
+				else {
+					if (gcnew System::String(registros[i].getValidacion().c_str()) == "No") {
+						NoValidado++;
+					}
+				}
+			}
 
-			controladora = new ControladoraDeDatos();
-			controladora->ObtenerRegistros();
-			dgvListado->Rows->Add("1", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
-			dgvListado->Rows->Add("2", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
-			dgvListado->Rows->Add("3", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
-			dgvListado->Rows->Add("4", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
-			dgvListado->Rows->Add("5", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
-			dgvListado->Rows->Add("6", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
-			dgvListado->Rows->Add("7", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
-			dgvListado->Rows->Add("8", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
-			dgvListado->Rows->Add("9", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
-			dgvListado->Rows->Add("10", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
-			dgvListado->Rows->Add("11", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
-			dgvListado->Rows->Add("12", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
-			dgvListado->Rows->Add("13", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
-			dgvListado->Rows->Add("14", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
+			lblNoVerificados->Text = "No Verificados: " + gcnew System::String(to_string(NoValidado).c_str());
+			lblVerificados->Text = "Verificados: " + gcnew System::String(to_string(verificado).c_str());
+			lblTotal->Text = "Total de Registros: " + gcnew System::String(to_string(totalregistros).c_str());
+
+			
+			
 		}
 
 
@@ -109,8 +117,11 @@ namespace GamejamCiclo2 {
 		/// Variable del diseñador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
-		ControladoraDeDatos* controladora;
+		ControladoraDeDatos* controladora2;
 
+		int totalregistros;
+		int verificado;
+		int NoValidado;
 #pragma region Windows Form Designer generated code
 		/// <summary>
 		/// Método necesario para admitir el Diseñador. No se puede modificar
@@ -143,35 +154,42 @@ namespace GamejamCiclo2 {
 			// cbHerramienta
 			// 
 			this->cbHerramienta->FormattingEnabled = true;
-			this->cbHerramienta->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Gemini", L"Chat gpt", L"Claude", L"Copilot" });
+			this->cbHerramienta->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
+				L"Todas", L"Gemini", L"Chat gpt", L"Claude",
+					L"Copilot"
+			});
 			this->cbHerramienta->Location = System::Drawing::Point(484, 37);
 			this->cbHerramienta->Name = L"cbHerramienta";
 			this->cbHerramienta->Size = System::Drawing::Size(221, 24);
 			this->cbHerramienta->TabIndex = 33;
+			this->cbHerramienta->Text = L"Todas";
 			// 
 			// cbCurso
 			// 
 			this->cbCurso->FormattingEnabled = true;
-			this->cbCurso->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
-				L"Cálculo I", L"Algoritmos", L"Organización y Dirección de Empresas",
+			this->cbCurso->Items->AddRange(gcnew cli::array< System::Object^  >(6) {
+				L"Todos", L"Cálculo I", L"Algoritmos", L"Organización y Dirección de Empresas",
 					L"Aplicaciones de ingeniería de Software", L"Seminario de Investigación Académica"
 			});
 			this->cbCurso->Location = System::Drawing::Point(12, 37);
 			this->cbCurso->Name = L"cbCurso";
 			this->cbCurso->Size = System::Drawing::Size(221, 24);
 			this->cbCurso->TabIndex = 32;
+			this->cbCurso->Text = L"Todos";
+			this->cbCurso->SelectedIndexChanged += gcnew System::EventHandler(this, &Listado::cbCurso_SelectedIndexChanged);
 			// 
 			// cbCategoria
 			// 
 			this->cbCategoria->FormattingEnabled = true;
-			this->cbCategoria->Items->AddRange(gcnew cli::array< System::Object^  >(9) {
-				L"Tarea", L"Examen", L"LB1", L"EA1", L"EB1",
-					L"Reto", L"Proyecto", L"Consulta Conceptual", L"Depuración de errores"
+			this->cbCategoria->Items->AddRange(gcnew cli::array< System::Object^  >(10) {
+				L"Todas", L"Tarea", L"Examen", L"LB1", L"EA1",
+					L"EB1", L"Reto", L"Proyecto", L"Consulta Conceptual", L"Depuración de errores"
 			});
 			this->cbCategoria->Location = System::Drawing::Point(248, 37);
 			this->cbCategoria->Name = L"cbCategoria";
 			this->cbCategoria->Size = System::Drawing::Size(221, 24);
 			this->cbCategoria->TabIndex = 31;
+			this->cbCategoria->Text = L"Todas";
 			// 
 			// lblIA
 			// 
@@ -216,6 +234,7 @@ namespace GamejamCiclo2 {
 			this->btnBuscar->TabIndex = 34;
 			this->btnBuscar->Text = L"Buscar";
 			this->btnBuscar->UseVisualStyleBackColor = true;
+			this->btnBuscar->Click += gcnew System::EventHandler(this, &Listado::btnBuscar_Click);
 			// 
 			// btnLimpiar
 			// 
@@ -227,6 +246,7 @@ namespace GamejamCiclo2 {
 			this->btnLimpiar->TabIndex = 35;
 			this->btnLimpiar->Text = L"Limpiar";
 			this->btnLimpiar->UseVisualStyleBackColor = true;
+			this->btnLimpiar->Click += gcnew System::EventHandler(this, &Listado::btnLimpiar_Click);
 			// 
 			// dgvListado
 			// 
@@ -355,6 +375,40 @@ namespace GamejamCiclo2 {
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	}
 private: System::Void Listado_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void btnBuscar_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	dgvListado->Rows->Clear();
+	vector<DatosRegistro> registros = controladora2->ObtenerRegistros();
+	verificado = 0;
+	NoValidado = 0;
+	totalregistros = 0;
+	for (int i = 0; i < registros.size(); i++) {
+		if ((gcnew System::String(registros[i].getCurso().c_str()) == cbCurso->Text || (cbCurso->Text == "Todos")) && (gcnew System::String(registros[i].getCategoria().c_str()) == cbCategoria->Text || (cbCategoria->Text == "Todas")) && (gcnew System::String(registros[i].getHerramienta().c_str()) == cbHerramienta->Text || (cbHerramienta->Text == "Todas"))) {
+			dgvListado->Rows->Add(registros[i].getNumero(), gcnew System::String(registros[i].getFecha().c_str()), gcnew System::String(registros[i].getCurso().c_str()), gcnew System::String(registros[i].getCategoria().c_str()), gcnew System::String(registros[i].getHerramienta().c_str()), gcnew System::String(registros[i].getConsulta().c_str()), gcnew System::String(registros[i].getValidacion().c_str()));
+			if (gcnew System::String(registros[i].getValidacion().c_str()) == "Si") {
+				verificado++;
+			}
+			else {
+				if (gcnew System::String(registros[i].getValidacion().c_str()) == "No") {
+					NoValidado++;
+				}
+			}
+			totalregistros++;
+		}
+	}
+	lblNoVerificados->Text = "No Verificados: " + gcnew System::String(to_string(NoValidado).c_str());
+	lblVerificados->Text = "Verificados: " + gcnew System::String(to_string(verificado).c_str());
+	lblTotal->Text = "Total de Registros: " + gcnew System::String(to_string(totalregistros).c_str());
+}
+private: System::Void cbCurso_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void btnLimpiar_Click(System::Object^ sender, System::EventArgs^ e) {
+	cbCurso->Text = "";
+	cbCategoria->Text = "";
+	cbHerramienta->Text = "";
+	dgvListado->Rows->Clear();
+
 }
 };
 }

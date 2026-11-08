@@ -385,7 +385,7 @@ private: System::Void btnGuardar_Click(System::Object^ sender, System::EventArgs
 	controladora2->GenerarDatoNuevo(Transformer(fecha), Transformer(curso), Transformer(categoria), Transformer(herramienta), Transformer(consulta),Transformer(resultado), Transformer(cambio), Transformer(valido));
 }
 	private: System::Void btnDetalles_Click(System::Object^ sender, System::EventArgs^ e) {
-		Listado^ frm = gcnew Listado();
+		Listado^ frm = gcnew Listado(controladora2);
 		frm->ShowDialog();
 	}
 private: System::Void btnLimpiar_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -399,7 +399,7 @@ private: System::Void btnLimpiar_Click(System::Object^ sender, System::EventArgs
 	monthCalendar1->SelectionStart = DateTime::Today;
 }
 private: System::Void btnDetalles_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	Listado^ frm = gcnew Listado();
+	Listado^ frm = gcnew Listado(controladora2);
 	frm->ShowDialog();
 }
 private: System::Void Registro_Leave(System::Object^ sender, System::EventArgs^ e) {

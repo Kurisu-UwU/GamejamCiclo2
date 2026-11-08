@@ -1,8 +1,8 @@
 8/11/2026
-
-
-
-
-
-
+Cálculo I
+LB1
+Claude
+asdfg
+qwer
+ytre
 Compilacion en Visual studio
