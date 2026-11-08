@@ -210,7 +210,8 @@ namespace GamejamCiclo2 {
 
 		}
 #pragma endregion
-		private: System::Void VerificarSiExisteArchivo() {
+	private:
+		System::Void VerificarSiExisteArchivo() {
 			fstream archivoObj("DatosDeObjetos/Objetos.txt");
 			if (!archivoObj) {
 				archivoObj.open("DatosDeObjetos/Objetos.txt", ios::out);
@@ -227,23 +228,23 @@ namespace GamejamCiclo2 {
 				archivoCantObj.open("DatosDeObjetos/CantObjetos.txt", ios::app);
 			}
 		}
-			   private: System::Void LeerDatos() {
-				   fstream archivoCantObj("DatosDeObjetos/CantObjetos.txt", ios::in);	
-				   if (archivoCantObj.is_open()) {
-					   string dato = "";
-					   getline(archivoCantObj, dato);
-					   int cant = stoi(dato);
-					   controladora->SetCantRegistros(cant);
-				   }
-				   fstream archivoObj("DatosDeObjetos/Objetos.txt", ios::in);
-				   string linea;
-				   string contenido = "";
-				   int lineaInt = 0;
-				   while (getline(archivoObj, linea)) {
-					   controladora->AgregarDatoExistente(stoi(linea));
-				   }
-				   archivoObj.close();
-			   }
+		System::Void LeerDatos() {
+			fstream archivoCantObj("DatosDeObjetos/CantObjetos.txt", ios::in);
+			if (archivoCantObj.is_open()) {
+				string dato = "";
+				getline(archivoCantObj, dato);
+				int cant = stoi(dato);
+				controladora->SetCantRegistros(cant);
+			}
+			fstream archivoObj("DatosDeObjetos/Objetos.txt", ios::in);
+			string linea;
+			string contenido = "";
+			int lineaInt = 0;
+			while (getline(archivoObj, linea)) {
+				controladora->AgregarDatoExistente(stoi(linea));
+			}
+			archivoObj.close();
+		}
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		VerificarSiExisteArchivo();
 		LeerDatos();

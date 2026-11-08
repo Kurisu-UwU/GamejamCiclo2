@@ -10,6 +10,12 @@ using namespace std;
 class DatosRegistro {
 private:
 	int numero;
+	string fecha;
+	string curso;
+	string categoria;
+	string herramienta;
+	string consulta;
+	bool validacion;
 
 public:
 	DatosRegistro() : numero(0) {};

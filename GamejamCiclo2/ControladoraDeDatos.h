@@ -29,7 +29,12 @@ public:
 		if (archivoObj.is_open()) {
 			archivoObj << cantregistros << endl;
 		}
-
+		archivoObj.close();
+		fstream archivoObj2("DatosDeObjetos/CantObjetos.txt", ios::out);
+		if (archivoObj2.is_open()) {
+			archivoObj2 << cantregistros;
+		}
+		archivoObj2.close();
 	}
 	void AgregarDatoExistente(int n) {
 		DatosRegistro r(n);
