@@ -20,7 +20,7 @@ private:
 
 public:
 	DatosRegistro() : numero(0) {};
-	DatosRegistro(int n, string fech, string curs, string cate, string herra, string consul, string resul, string camb, bool vali) : numero(n){ 
+	DatosRegistro(int n, string fech, string curs, string cate, string herra, string consul, string resul, string camb, bool vali) : numero(n) {
 		numero = n;
 		fecha = fech;
 		curso = curs;
@@ -31,7 +31,7 @@ public:
 		resultado = resul;
 		cambio = camb;
 	};
-	~DatosRegistro() {};	
+	~DatosRegistro() {};
 	void SetNumero(int num) { numero = num; }
 	void SetFecha(string fech) { fecha = fech; }
 	void SetCurso(string curs) { curso = curs; }
@@ -41,7 +41,7 @@ public:
 	void SetResultado(string resul) { resultado = resul; }
 	void SetCambio(string camb) { cambio = camb; }
 	void SetValidacion(bool vali) { validacion = vali; }
-	
+
 	int getNumero() { return numero; }
 	string getFecha() { return fecha; }
 	string getCurso() { return curso; }
@@ -58,9 +58,6 @@ public:
 			return "No";
 		}
 	}
-
-
-
 	void GenerarArchivo(string fecha1, string curso1, string categoria1, string herramienta1, string consulta1, string resultado1, string cambio1, string valido1, int numeroarchivo) {
 		ofstream my_file;
 		my_file.open("Datos/DatosRegistro_" + to_string(numeroarchivo) + ".txt");
@@ -76,34 +73,24 @@ public:
 		}
 		my_file.close();
 	}
-	/*vector<int> LeerArchivos(vector<string> buscadas) {
-		vector<int> conteo(buscadas.size(),0);
+	vector<int> LeerArchivos(vector<string> buscadas) {
 		string nomb = "Datos/DatosRegistro_" + to_string(numero) + ".txt";
 		ifstream archivo(nomb);
 		string contenido = "";
 		string linea;
-
-		if (!archivo) {
-			cout << "Error opening file" << endl;
-		}
-
+		if (!archivo) { cout << "Error opening file" << endl; }
+		int bucle = 0;
 		while (getline(archivo, linea)) {
-			contenido += linea + " ";
+			if (bucle > 3) {
+				contenido += linea + " ";
+			}
+			bucle++;
 		}
-
-
-
-
 		vector<string> palabras;
 		string actual = "";
-
 		for (size_t i = 0; i < contenido.size(); i++) {
 			if (contenido[i] == ' ' || contenido[i] == '\t' || contenido[i] == '\n') {
 				if (!actual.empty()) {
-
-
-
-
 					string limpia = "";
 					for (size_t i = 0; i < actual.size(); i++) {
 						char c = actual[i];
@@ -111,32 +98,13 @@ public:
 							limpia += (char)tolower((unsigned char)c);
 						}
 					}
-					
-
-
-
-
 					if (!limpia.empty()) palabras.push_back(limpia);
 					actual = "";
 				}
 			}
-			else {
-				actual += contenido[i];
-			}
+			else { actual += contenido[i]; }
 		}
-		if (!actual.empty()) {
-
-			string limpia = "";
-			for (size_t i = 0; i < actual.size(); i++) {
-				char c = actual[i];
-				if (isalnum((unsigned char)c) || (unsigned char)c > 127) {
-					limpia += (char)tolower((unsigned char)c);
-				}
-			}
-
-			if (!limpia.empty()) palabras.push_back(limpia);
-		}
-
+		vector<int> conteo(buscadas.size(), 0);
 		for (size_t i = 0; i < buscadas.size(); i++) {
 			string objetivo = buscadas[i];
 			for (size_t j = 0; j < palabras.size(); j++) {
@@ -146,7 +114,7 @@ public:
 			}
 		}
 		return conteo;
-	}*/
+	}
 	void SeRegistraAsiMismo() {
 		fstream archivoObj("Datos/DatosRegistro_" + to_string(numero) + ".txt", ios::in);
 		string linea;

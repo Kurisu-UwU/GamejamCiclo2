@@ -21,7 +21,7 @@ namespace GamejamCiclo2 {
 			//
 			//TODO: agregar código de constructor aquí
 			//
-			controladora2 = controladora;
+			controladora2 = (ControladoraDeDatosParte1*)controladora;
 		}
 
 	protected:
@@ -43,7 +43,7 @@ namespace GamejamCiclo2 {
 		System::ComponentModel::Container ^components;
 	private: System::Windows::Forms::Label^ label1;
 
-		  ControladoraDeDatos* controladora2;
+		  ControladoraDeDatosParte1* controladora2;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -80,17 +80,48 @@ namespace GamejamCiclo2 {
 		}
 #pragma endregion
 	private: System::Void DashBoard3_Load(System::Object^ sender, System::EventArgs^ e) {
-		/*
-		vector<int> porcentajes = controladora2->Calcularporcetajes();  // no se usa d emomento
-		if (porcentajes.size() < 4) return;
-		int a = porcentajes[0];
+		String^ result = "";
+		vector<string> clave{ "consulta", "resultado", "cambio", "valido", "mejora", "cambiamos", "analizamos" };
+		vector<int> porcentajes = controladora2->Calcularporcetajes(clave);  // no se usa d emomento
+		vector<string> posicion = clave;
+		for (size_t i = 0; i < porcentajes.size(); i++) {
+			size_t mayor = i;
+			for (size_t j = i; j < porcentajes.size(); j++) {
+				if (porcentajes[j] > porcentajes[mayor]) {
+					mayor = j;
+				}
+			}
+			if (mayor != i) {
+				int tempNum = porcentajes[i];
+				porcentajes[i] = porcentajes[mayor];
+				porcentajes[mayor] = tempNum;
+
+				string tempPal = clave[i];
+				clave[i] = clave[mayor];
+				clave[mayor] = tempPal;
+			}
+			int adios = porcentajes[i];
+			String^ hola = gcnew String(clave[i].c_str());
+			result = result + (i+1) + ". " + hola + ":  " + adios + "\n";
+		}
+		if (porcentajes.size() < 7) return;
+		/*int a = porcentajes[0];
 		int b = porcentajes[1];
 		int c = porcentajes[2];
 		int d = porcentajes[3];
-		String^ result = "Consulta: " + a + "\nResultado: " + b + "\nCambio: " + c + "\nValido: " + d;
+		int f = porcentajes[4];
+		int g = porcentajes[5];
+		int h = porcentajes[6];
+		String^ result =
+			"Consulta: " + a +
+			"\nResultado: " + b +
+			"\nCambio: " + c +
+			"\nValido: " + d +
+			"\nMejora: " + f +
+			"\nCambiamos: " + g +
+			"\nCambio: " + h;
 		*/
-
-		label1->Text = "Sin funcionar, Dashboard3 linea 93";
+		label1->Text = result;
 		
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {

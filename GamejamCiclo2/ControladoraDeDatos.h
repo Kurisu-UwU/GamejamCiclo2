@@ -34,16 +34,14 @@ public:
 	vector<DatosRegistro> ObtenerRegistros() override {
 		return this->registros;
 	}
-	/*vector<int> Calcularporcetajes() { //Desuso
-		vector<string> clave = { "consulta", "resultado", "cambio", "valido" };
-		vector<int> total(4,0);
+	vector<int> Calcularporcetajes(vector<string> clave) { 
+		vector<int> total(clave.size(), 0);
 		for (size_t i = 0; i < registros.size(); i++) {
 			vector<int> awa = registros[i].LeerArchivos(clave);
-			total[0] += awa[0];
-			total[1] += awa[1];
-			total[2] += awa[2];
-			total[3] += awa[3];
+			for (size_t j = 0; j < clave.size() && j < awa.size(); j++) {
+				total[j] += awa[j];
+			}
 		}
 		return total; 
-	}*/
+	}
 };

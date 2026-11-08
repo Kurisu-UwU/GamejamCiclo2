@@ -102,7 +102,7 @@ namespace GamejamCiclo2 {
 		prueba1->Text = "Cantidad de registros: " + (float)registros.size();
 		float cantvalido = 0;
 		for (time_t i = 0; i < registros.size(); i++) {
-			if (registros[i].getValidacion() == true) {
+			if (registros[i].getValidacion() == "Si") {
 				cantvalido++;
 			}
 		}
@@ -113,7 +113,7 @@ namespace GamejamCiclo2 {
 		vector<DatosRegistro> registros = controladora2->ObtenerRegistros();
 		float cantvalido = 0;
 		for (time_t i = 0; i < registros.size(); i++) {
-			if (registros[i].getValidacion() == true) {
+			if (registros[i].getValidacion() == "Si") {
 				cantvalido++;
 			}
 		}
