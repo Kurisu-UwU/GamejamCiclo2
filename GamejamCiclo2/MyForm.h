@@ -267,7 +267,7 @@ namespace GamejamCiclo2 {
 		frm->ShowDialog();
 	}
 	private: System::Void btnDB1_Click(System::Object^ sender, System::EventArgs^ e) {
-		DashBoard1^ frm = gcnew DashBoard1();
+		DashBoard1^ frm = gcnew DashBoard1(controladora2);
 		frm->ShowDialog();
 	}
 private: System::Void btnDB2_Click(System::Object^ sender, System::EventArgs^ e) {
