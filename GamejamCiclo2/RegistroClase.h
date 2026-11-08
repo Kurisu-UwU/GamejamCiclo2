@@ -17,10 +17,14 @@ public:
 	void SetNumero(int num) { numero = num; }
 	int getNumero() { return numero; }
 
-	void GenerarArchivo(string consulta, string resultado, string cambio, string valido, int numeroarchivo) {
+	void GenerarArchivo(string fecha, string curso, string categoria, string herramienta, string consulta, string resultado, string cambio, string valido, int numeroarchivo) {
 		ofstream my_file;
 		my_file.open("Datos/DatosRegistro_" + to_string(numeroarchivo) + ".txt");
 		if (my_file) {
+			my_file << fecha << endl;
+			my_file << curso << endl;
+			my_file << categoria << endl;
+			my_file << herramienta << endl;
 			my_file << consulta << endl;
 			my_file << resultado << endl;
 			my_file << cambio << endl;

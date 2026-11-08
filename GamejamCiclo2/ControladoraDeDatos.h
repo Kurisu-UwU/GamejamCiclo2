@@ -1,9 +1,11 @@
 #pragma once
 #include "RegistroClase.h";
+#include "DatosTabla.h"
 
 class ControladoraDeDatos {
 private:
 	vector<DatosRegistro> registros;
+	vector<DatosTabla> tabla;
 	int cantregistros;
 public:
 	ControladoraDeDatos() : cantregistros(0) {};
@@ -14,10 +16,10 @@ public:
 
 	//funciones
 
-	void GenerarDatoNuevo(string consulta, string resultado, string cambio, string valido) {
+	void GenerarDatoNuevo(string fecha, string curso, string categoria, string herramienta, string consulta, string resultado, string cambio, string valido) {
 		cantregistros++;
 		DatosRegistro r(cantregistros);
-		r.GenerarArchivo(consulta, resultado, cambio, valido, cantregistros);
+		r.GenerarArchivo(fecha, curso, categoria, herramienta, consulta, resultado, cambio, valido, cantregistros);
 		registros.push_back(r);
 
 		fstream archivoObj("DatosDeObjetos/Objetos.txt", ios::app);
@@ -49,5 +51,12 @@ public:
 			total[3] += awa[3];
 		}
 		return total; 
+	}
+
+	void AsignarValoresTabla() {
+		int numero = 1;
+		string nomb = "Datos/DatosRegistro_" + to_string(numero) + ".txt";
+		ifstream archivo(nomb);
+
 	}
 };

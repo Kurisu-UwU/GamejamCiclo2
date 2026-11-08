@@ -146,6 +146,7 @@
     <ClInclude Include="DashBoard3.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="DatosTabla.h" />
     <ClInclude Include="GenerarDatosPrueba.h">
       <FileType>CppForm</FileType>
     </ClInclude>

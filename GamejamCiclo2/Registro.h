@@ -104,7 +104,7 @@ namespace GamejamCiclo2 {
 			// 
 			this->tbResultado->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->tbResultado->Location = System::Drawing::Point(14, 408);
+			this->tbResultado->Location = System::Drawing::Point(14, 366);
 			this->tbResultado->Name = L"tbResultado";
 			this->tbResultado->Size = System::Drawing::Size(540, 30);
 			this->tbResultado->TabIndex = 31;
@@ -114,7 +114,7 @@ namespace GamejamCiclo2 {
 			this->lblResultado->AutoSize = true;
 			this->lblResultado->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblResultado->Location = System::Drawing::Point(14, 377);
+			this->lblResultado->Location = System::Drawing::Point(14, 335);
 			this->lblResultado->Name = L"lblResultado";
 			this->lblResultado->Size = System::Drawing::Size(247, 22);
 			this->lblResultado->TabIndex = 30;
@@ -124,7 +124,7 @@ namespace GamejamCiclo2 {
 			// 
 			this->tbConsulta->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->tbConsulta->Location = System::Drawing::Point(14, 336);
+			this->tbConsulta->Location = System::Drawing::Point(14, 294);
 			this->tbConsulta->Name = L"tbConsulta";
 			this->tbConsulta->Size = System::Drawing::Size(540, 30);
 			this->tbConsulta->TabIndex = 29;
@@ -135,7 +135,7 @@ namespace GamejamCiclo2 {
 			this->lblConsulta->AutoSize = true;
 			this->lblConsulta->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblConsulta->Location = System::Drawing::Point(14, 307);
+			this->lblConsulta->Location = System::Drawing::Point(14, 265);
 			this->lblConsulta->Name = L"lblConsulta";
 			this->lblConsulta->Size = System::Drawing::Size(163, 22);
 			this->lblConsulta->TabIndex = 28;
@@ -233,7 +233,7 @@ namespace GamejamCiclo2 {
 			this->lblValidacion->AutoSize = true;
 			this->lblValidacion->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblValidacion->Location = System::Drawing::Point(612, 377);
+			this->lblValidacion->Location = System::Drawing::Point(612, 335);
 			this->lblValidacion->Name = L"lblValidacion";
 			this->lblValidacion->Size = System::Drawing::Size(152, 22);
 			this->lblValidacion->TabIndex = 34;
@@ -243,7 +243,7 @@ namespace GamejamCiclo2 {
 			// 
 			this->tbCambio->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->tbCambio->Location = System::Drawing::Point(612, 336);
+			this->tbCambio->Location = System::Drawing::Point(612, 294);
 			this->tbCambio->Name = L"tbCambio";
 			this->tbCambio->Size = System::Drawing::Size(540, 30);
 			this->tbCambio->TabIndex = 33;
@@ -253,7 +253,7 @@ namespace GamejamCiclo2 {
 			this->lblCambio->AutoSize = true;
 			this->lblCambio->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblCambio->Location = System::Drawing::Point(612, 307);
+			this->lblCambio->Location = System::Drawing::Point(612, 265);
 			this->lblCambio->Name = L"lblCambio";
 			this->lblCambio->Size = System::Drawing::Size(144, 22);
 			this->lblCambio->TabIndex = 32;
@@ -263,7 +263,7 @@ namespace GamejamCiclo2 {
 			// 
 			this->btnGuardar->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnGuardar->Location = System::Drawing::Point(14, 472);
+			this->btnGuardar->Location = System::Drawing::Point(14, 430);
 			this->btnGuardar->Name = L"btnGuardar";
 			this->btnGuardar->Size = System::Drawing::Size(270, 54);
 			this->btnGuardar->TabIndex = 36;
@@ -275,7 +275,7 @@ namespace GamejamCiclo2 {
 			// 
 			this->btnLimpiar->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnLimpiar->Location = System::Drawing::Point(291, 472);
+			this->btnLimpiar->Location = System::Drawing::Point(291, 430);
 			this->btnLimpiar->Name = L"btnLimpiar";
 			this->btnLimpiar->Size = System::Drawing::Size(270, 54);
 			this->btnLimpiar->TabIndex = 37;
@@ -287,7 +287,7 @@ namespace GamejamCiclo2 {
 			// 
 			this->btnAleatorio->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnAleatorio->Location = System::Drawing::Point(567, 472);
+			this->btnAleatorio->Location = System::Drawing::Point(567, 430);
 			this->btnAleatorio->Name = L"btnAleatorio";
 			this->btnAleatorio->Size = System::Drawing::Size(270, 54);
 			this->btnAleatorio->TabIndex = 38;
@@ -298,7 +298,7 @@ namespace GamejamCiclo2 {
 			// 
 			this->btnDetalles->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnDetalles->Location = System::Drawing::Point(882, 472);
+			this->btnDetalles->Location = System::Drawing::Point(882, 430);
 			this->btnDetalles->Name = L"btnDetalles";
 			this->btnDetalles->Size = System::Drawing::Size(270, 54);
 			this->btnDetalles->TabIndex = 39;
@@ -313,7 +313,7 @@ namespace GamejamCiclo2 {
 				L"Compilacion en Visual studio", L"Verificacion mediante ejemplos",
 					L"Respaldo por fuentes confiables", L"No se valido"
 			});
-			this->cbValidacion->Location = System::Drawing::Point(612, 408);
+			this->cbValidacion->Location = System::Drawing::Point(612, 366);
 			this->cbValidacion->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->cbValidacion->Name = L"cbValidacion";
 			this->cbValidacion->Size = System::Drawing::Size(540, 30);
@@ -323,7 +323,7 @@ namespace GamejamCiclo2 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(11, 22);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1194, 459);
+			this->ClientSize = System::Drawing::Size(1194, 498);
 			this->Controls->Add(this->cbValidacion);
 			this->Controls->Add(this->btnDetalles);
 			this->Controls->Add(this->btnAleatorio);
@@ -374,11 +374,15 @@ private: System::Void btnAleatorio_Click(System::Object^ sender, System::EventAr
 private: System::Void tbConsulta_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void btnGuardar_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ fecha = monthCalendar1->SelectionStart.ToShortDateString();
+	String^ curso = cbCurso->Text;
+	String^ categoria = cbCategoria->Text;
+	String^ herramienta = cbHerramienta->Text;
 	String^ consulta = tbConsulta->Text;
 	String^ resultado = tbResultado->Text;
 	String^ cambio = tbCambio->Text;
 	String^ valido = cbValidacion->Text;
-	controladora2->GenerarDatoNuevo(Transformer(consulta),Transformer(resultado), Transformer(cambio), Transformer(valido));
+	controladora2->GenerarDatoNuevo(Transformer(fecha), Transformer(curso), Transformer(categoria), Transformer(herramienta), Transformer(consulta),Transformer(resultado), Transformer(cambio), Transformer(valido));
 }
 	private: System::Void btnDetalles_Click(System::Object^ sender, System::EventArgs^ e) {
 		Listado^ frm = gcnew Listado();

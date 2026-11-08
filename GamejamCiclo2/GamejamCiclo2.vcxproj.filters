@@ -71,5 +71,14 @@
     <ClInclude Include="GenerarDatosPrueba.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ControladoraDeDatos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RegistroClase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DatosTabla.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
