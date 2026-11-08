@@ -155,7 +155,7 @@ namespace GamejamCiclo2 {
 			this->monthCalendar1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->monthCalendar1->Location = System::Drawing::Point(616, 41);
-			this->monthCalendar1->Margin = System::Windows::Forms::Padding(10, 10, 10, 10);
+			this->monthCalendar1->Margin = System::Windows::Forms::Padding(10);
 			this->monthCalendar1->Name = L"monthCalendar1";
 			this->monthCalendar1->TabIndex = 26;
 			// 
@@ -349,6 +349,7 @@ namespace GamejamCiclo2 {
 			this->Location = System::Drawing::Point(408, 279);
 			this->Name = L"Registro";
 			this->Text = L"Registro";
+			this->Load += gcnew System::EventHandler(this, &Registro::Registro_Load);
 			this->Leave += gcnew System::EventHandler(this, &Registro::Registro_Leave);
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -401,6 +402,8 @@ private: System::Void Registro_Leave(System::Object^ sender, System::EventArgs^ 
 
 }
 private: System::Void cbCurso_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void Registro_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 	

@@ -19,6 +19,14 @@ public:
 		DatosRegistro r(cantregistros);
 		r.GenerarArchivo(consulta, resultado, cambio, valido, cantregistros);
 		registros.push_back(r);
+
+		fstream archivoObj("DatosDeObjetos/Objetos.txt");
+		if (!archivoObj) {
+			archivoObj.open("DatosDeObjetos/Objetos.txt", ios::out);
+		}
+		else {
+			archivoObj.open("DatosDeObjetos/Objetos.txt", ios::app);
+		}
 	}
 
 	void SetCantRegistros(int cant) {

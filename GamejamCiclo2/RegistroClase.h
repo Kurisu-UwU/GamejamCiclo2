@@ -18,15 +18,9 @@ public:
 	int getNumero() { return numero; }
 
 	void GenerarArchivo(string consulta, string resultado, string cambio, string valido, int numeroarchivo) {
-		string name = "Datos/DatosRegistro_";
-		name += to_string(numeroarchivo) + ".txt";
 		ofstream my_file;
-		my_file.open(name);
-		if (!my_file) {
-			cout << "Error opening file" << endl;
-		}
-		else {
-			cout << "File created successfully" << endl;
+		my_file.open("Datos/DatosRegistro_" + to_string(numeroarchivo) + ".txt");
+		if (my_file) {
 			my_file << consulta << endl;
 			my_file << resultado << endl;
 			my_file << cambio << endl;
