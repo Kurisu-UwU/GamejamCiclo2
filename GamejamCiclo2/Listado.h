@@ -22,14 +22,28 @@ namespace GamejamCiclo2 {
 			//
 			//TODO: agregar código de constructor aquí
 			//
-
 			controladora2 = controladora;
 			controladora2->ObtenerRegistros();
 			vector<DatosRegistro> registros = controladora2->ObtenerRegistros();
+			totalregistros = 0;
+			NoValidado = 0;
+			verificado = 0;
 			for (int i = 0; i < registros.size(); i++) {
-				dgvListado->Rows->Add(registros[i].getNumero(), gcnew System::String(registros[i].getFecha().c_str()), gcnew System::String(registros[i].getCurso().c_str()), gcnew System::String(registros[i].getCategoria().c_str()), gcnew System::String(registros[i].getHerramienta().c_str()), gcnew System::String(registros[i].getConsulta().c_str()), "Si");
+				dgvListado->Rows->Add(registros[i].getNumero(), gcnew System::String(registros[i].getFecha().c_str()), gcnew System::String(registros[i].getCurso().c_str()), gcnew System::String(registros[i].getCategoria().c_str()), gcnew System::String(registros[i].getHerramienta().c_str()), gcnew System::String(registros[i].getConsulta().c_str()), gcnew System::String(registros[i].getValidacion().c_str()));
+				totalregistros++;
+				if (gcnew System::String(registros[i].getValidacion().c_str()) == "Si") {
+					verificado++;
+				}
+				else {
+					if (gcnew System::String(registros[i].getValidacion().c_str()) == "No") {
+						NoValidado++;
+					}
+				}
 			}
 
+			lblNoVerificados->Text = "No Verificados: " + gcnew System::String(to_string(NoValidado).c_str());
+			lblVerificados->Text = "Verificados: " + gcnew System::String(to_string(verificado).c_str());
+			lblTotal->Text = "Total de Registros: " + gcnew System::String(to_string(totalregistros).c_str());
 
 			
 			
@@ -105,6 +119,9 @@ namespace GamejamCiclo2 {
 		System::ComponentModel::Container ^components;
 		ControladoraDeDatos* controladora2;
 
+		int totalregistros;
+		int verificado;
+		int NoValidado;
 #pragma region Windows Form Designer generated code
 		/// <summary>
 		/// Método necesario para admitir el Diseñador. No se puede modificar
@@ -363,11 +380,26 @@ private: System::Void btnBuscar_Click(System::Object^ sender, System::EventArgs^
 
 	dgvListado->Rows->Clear();
 	vector<DatosRegistro> registros = controladora2->ObtenerRegistros();
+	verificado = 0;
+	NoValidado = 0;
+	totalregistros = 0;
 	for (int i = 0; i < registros.size(); i++) {
 		if ((gcnew System::String(registros[i].getCurso().c_str()) == cbCurso->Text || (cbCurso->Text == "Todos")) && (gcnew System::String(registros[i].getCategoria().c_str()) == cbCategoria->Text || (cbCategoria->Text == "Todas")) && (gcnew System::String(registros[i].getHerramienta().c_str()) == cbHerramienta->Text || (cbHerramienta->Text == "Todas"))) {
-			dgvListado->Rows->Add(registros[i].getNumero(), gcnew System::String(registros[i].getFecha().c_str()), gcnew System::String(registros[i].getCurso().c_str()), gcnew System::String(registros[i].getCategoria().c_str()), gcnew System::String(registros[i].getHerramienta().c_str()), gcnew System::String(registros[i].getConsulta().c_str()), "Si");
+			dgvListado->Rows->Add(registros[i].getNumero(), gcnew System::String(registros[i].getFecha().c_str()), gcnew System::String(registros[i].getCurso().c_str()), gcnew System::String(registros[i].getCategoria().c_str()), gcnew System::String(registros[i].getHerramienta().c_str()), gcnew System::String(registros[i].getConsulta().c_str()), gcnew System::String(registros[i].getValidacion().c_str()));
+			if (gcnew System::String(registros[i].getValidacion().c_str()) == "Si") {
+				verificado++;
+			}
+			else {
+				if (gcnew System::String(registros[i].getValidacion().c_str()) == "No") {
+					NoValidado++;
+				}
+			}
+			totalregistros++;
 		}
 	}
+	lblNoVerificados->Text = "No Verificados: " + gcnew System::String(to_string(NoValidado).c_str());
+	lblVerificados->Text = "Verificados: " + gcnew System::String(to_string(verificado).c_str());
+	lblTotal->Text = "Total de Registros: " + gcnew System::String(to_string(totalregistros).c_str());
 }
 private: System::Void cbCurso_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }

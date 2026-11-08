@@ -166,6 +166,6 @@ public:
 			}
 			lineaInt++;
 		}
-		if (valido == "Copilacion en Visual studio" || valido == "Verificacion mediante ejemplos" || valido == "respaldo por fuentes confiables") this->validacion = true; else this->validacion = false;
+		if (valido == "Compilacion en Visual studio" || valido == "Verificacion mediante ejemplos" || valido == "respaldo por fuentes confiables") this->validacion = true; else this->validacion = false;
 	}
 };
