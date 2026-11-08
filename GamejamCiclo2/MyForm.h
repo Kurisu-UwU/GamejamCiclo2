@@ -238,12 +238,11 @@ namespace GamejamCiclo2 {
 			}
 			fstream archivoObj("DatosDeObjetos/Objetos.txt", ios::in);
 			string linea;
-			string contenido = "";
-			int lineaInt = 0;
 			while (getline(archivoObj, linea)) {
 				controladora->AgregarDatoExistente(stoi(linea));
 			}
 			archivoObj.close();
+			archivoCantObj.close();
 		}
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		VerificarSiExisteArchivo();

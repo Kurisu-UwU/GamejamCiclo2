@@ -17,8 +17,12 @@ public:
 	//funciones
 
 	void GenerarDatoNuevo(string fecha, string curso, string categoria, string herramienta, string consulta, string resultado, string cambio, string valido) {
+		bool esValido = false;
+		if (valido == "Copilacion en Visual studio" || valido == "Verificacion mediante ejemplos" || valido == "respaldo por fuentes confiables") {
+			esValido = true;
+		}
 		cantregistros++;
-		DatosRegistro r(cantregistros);
+		DatosRegistro r(cantregistros, fecha, curso, categoria, herramienta, consulta, resultado, cambio, esValido);
 		r.GenerarArchivo(fecha, curso, categoria, herramienta, consulta, resultado, cambio, valido, cantregistros);
 		registros.push_back(r);
 
@@ -37,7 +41,8 @@ public:
 		archivoObj2.close();
 	}
 	void AgregarDatoExistente(int n) {
-		DatosRegistro r(n);
+		DatosRegistro r(n, "", "", "", "", "", "", "", false);
+		r.SeRegistraAsiMismo();
 		registros.push_back(r);
 	}
 
@@ -45,7 +50,7 @@ public:
 		cantregistros = cant;
 	}
 
-	vector<int> Calcularporcetajes() {
+	/*vector<int> Calcularporcetajes() { //Desuso
 		vector<string> clave = { "consulta", "resultado", "cambio", "valido" };
 		vector<int> total(4,0);
 		for (size_t i = 0; i < registros.size(); i++) {
@@ -56,7 +61,12 @@ public:
 			total[3] += awa[3];
 		}
 		return total; 
+	}*/
+
+	vector<DatosRegistro> ObtenerRegistros() {
+		return registros;
 	}
+
 
 	void AsignarValoresTabla() {
 		int numero = 1;

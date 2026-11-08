@@ -80,14 +80,17 @@ namespace GamejamCiclo2 {
 		}
 #pragma endregion
 	private: System::Void DashBoard3_Load(System::Object^ sender, System::EventArgs^ e) {
-		vector<int> porcentajes = controladora2->Calcularporcetajes();
+		/*
+		vector<int> porcentajes = controladora2->Calcularporcetajes();  // no se usa d emomento
 		if (porcentajes.size() < 4) return;
 		int a = porcentajes[0];
 		int b = porcentajes[1];
 		int c = porcentajes[2];
 		int d = porcentajes[3];
 		String^ result = "Consulta: " + a + "\nResultado: " + b + "\nCambio: " + c + "\nValido: " + d;
-		label1->Text = result;
+		*/
+
+		label1->Text = "Sin funcionar, Dashboard3 linea 93";
 		
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
