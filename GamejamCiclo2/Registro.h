@@ -106,7 +106,7 @@ namespace GamejamCiclo2 {
 				static_cast<System::Byte>(0)));
 			this->tbResultado->Location = System::Drawing::Point(14, 408);
 			this->tbResultado->Name = L"tbResultado";
-			this->tbResultado->Size = System::Drawing::Size(540, 26);
+			this->tbResultado->Size = System::Drawing::Size(540, 30);
 			this->tbResultado->TabIndex = 31;
 			// 
 			// lblResultado
@@ -116,7 +116,7 @@ namespace GamejamCiclo2 {
 				static_cast<System::Byte>(0)));
 			this->lblResultado->Location = System::Drawing::Point(14, 377);
 			this->lblResultado->Name = L"lblResultado";
-			this->lblResultado->Size = System::Drawing::Size(188, 19);
+			this->lblResultado->Size = System::Drawing::Size(247, 22);
 			this->lblResultado->TabIndex = 30;
 			this->lblResultado->Text = L"Resultado de la IA (resumen):";
 			// 
@@ -126,7 +126,7 @@ namespace GamejamCiclo2 {
 				static_cast<System::Byte>(0)));
 			this->tbConsulta->Location = System::Drawing::Point(14, 336);
 			this->tbConsulta->Name = L"tbConsulta";
-			this->tbConsulta->Size = System::Drawing::Size(540, 26);
+			this->tbConsulta->Size = System::Drawing::Size(540, 30);
 			this->tbConsulta->TabIndex = 29;
 			this->tbConsulta->TextChanged += gcnew System::EventHandler(this, &Registro::tbConsulta_TextChanged);
 			// 
@@ -137,7 +137,7 @@ namespace GamejamCiclo2 {
 				static_cast<System::Byte>(0)));
 			this->lblConsulta->Location = System::Drawing::Point(14, 307);
 			this->lblConsulta->Name = L"lblConsulta";
-			this->lblConsulta->Size = System::Drawing::Size(122, 19);
+			this->lblConsulta->Size = System::Drawing::Size(163, 22);
 			this->lblConsulta->TabIndex = 28;
 			this->lblConsulta->Text = L"Consulta realizada:";
 			// 
@@ -147,7 +147,7 @@ namespace GamejamCiclo2 {
 			this->cbHerramienta->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Gemini", L"Chat gpt", L"Claude", L"Copilot" });
 			this->cbHerramienta->Location = System::Drawing::Point(14, 187);
 			this->cbHerramienta->Name = L"cbHerramienta";
-			this->cbHerramienta->Size = System::Drawing::Size(248, 27);
+			this->cbHerramienta->Size = System::Drawing::Size(248, 30);
 			this->cbHerramienta->TabIndex = 27;
 			// 
 			// monthCalendar1
@@ -168,7 +168,7 @@ namespace GamejamCiclo2 {
 			});
 			this->cbCurso->Location = System::Drawing::Point(14, 114);
 			this->cbCurso->Name = L"cbCurso";
-			this->cbCurso->Size = System::Drawing::Size(248, 27);
+			this->cbCurso->Size = System::Drawing::Size(248, 30);
 			this->cbCurso->TabIndex = 25;
 			this->cbCurso->SelectedIndexChanged += gcnew System::EventHandler(this, &Registro::cbCurso_SelectedIndexChanged);
 			// 
@@ -181,7 +181,7 @@ namespace GamejamCiclo2 {
 			});
 			this->cbCategoria->Location = System::Drawing::Point(14, 41);
 			this->cbCategoria->Name = L"cbCategoria";
-			this->cbCategoria->Size = System::Drawing::Size(248, 27);
+			this->cbCategoria->Size = System::Drawing::Size(248, 30);
 			this->cbCategoria->TabIndex = 24;
 			// 
 			// lblIA
@@ -191,7 +191,7 @@ namespace GamejamCiclo2 {
 				static_cast<System::Byte>(0)));
 			this->lblIA->Location = System::Drawing::Point(14, 158);
 			this->lblIA->Name = L"lblIA";
-			this->lblIA->Size = System::Drawing::Size(106, 19);
+			this->lblIA->Size = System::Drawing::Size(139, 22);
 			this->lblIA->TabIndex = 23;
 			this->lblIA->Text = L"Herramienta IA:";
 			// 
@@ -202,7 +202,7 @@ namespace GamejamCiclo2 {
 				static_cast<System::Byte>(0)));
 			this->lblCategoria->Location = System::Drawing::Point(14, 10);
 			this->lblCategoria->Name = L"lblCategoria";
-			this->lblCategoria->Size = System::Drawing::Size(143, 19);
+			this->lblCategoria->Size = System::Drawing::Size(187, 22);
 			this->lblCategoria->TabIndex = 22;
 			this->lblCategoria->Text = L"Categoría de consulta:";
 			// 
@@ -213,7 +213,7 @@ namespace GamejamCiclo2 {
 				static_cast<System::Byte>(0)));
 			this->lblCurso->Location = System::Drawing::Point(14, 85);
 			this->lblCurso->Name = L"lblCurso";
-			this->lblCurso->Size = System::Drawing::Size(49, 19);
+			this->lblCurso->Size = System::Drawing::Size(63, 22);
 			this->lblCurso->TabIndex = 21;
 			this->lblCurso->Text = L"Curso:";
 			// 
@@ -224,7 +224,7 @@ namespace GamejamCiclo2 {
 				static_cast<System::Byte>(0)));
 			this->lblFecha->Location = System::Drawing::Point(612, 10);
 			this->lblFecha->Name = L"lblFecha";
-			this->lblFecha->Size = System::Drawing::Size(49, 19);
+			this->lblFecha->Size = System::Drawing::Size(63, 22);
 			this->lblFecha->TabIndex = 20;
 			this->lblFecha->Text = L"Fecha:";
 			// 
@@ -235,7 +235,7 @@ namespace GamejamCiclo2 {
 				static_cast<System::Byte>(0)));
 			this->lblValidacion->Location = System::Drawing::Point(612, 377);
 			this->lblValidacion->Name = L"lblValidacion";
-			this->lblValidacion->Size = System::Drawing::Size(118, 19);
+			this->lblValidacion->Size = System::Drawing::Size(152, 22);
 			this->lblValidacion->TabIndex = 34;
 			this->lblValidacion->Text = L"¿Cómo se validó\?";
 			// 
@@ -245,7 +245,7 @@ namespace GamejamCiclo2 {
 				static_cast<System::Byte>(0)));
 			this->tbCambio->Location = System::Drawing::Point(612, 336);
 			this->tbCambio->Name = L"tbCambio";
-			this->tbCambio->Size = System::Drawing::Size(540, 26);
+			this->tbCambio->Size = System::Drawing::Size(540, 30);
 			this->tbCambio->TabIndex = 33;
 			// 
 			// lblCambio
@@ -255,7 +255,7 @@ namespace GamejamCiclo2 {
 				static_cast<System::Byte>(0)));
 			this->lblCambio->Location = System::Drawing::Point(612, 307);
 			this->lblCambio->Name = L"lblCambio";
-			this->lblCambio->Size = System::Drawing::Size(114, 19);
+			this->lblCambio->Size = System::Drawing::Size(144, 22);
 			this->lblCambio->TabIndex = 32;
 			this->lblCambio->Text = L"¿Qué se cambio\?";
 			// 
@@ -313,17 +313,17 @@ namespace GamejamCiclo2 {
 				L"Compilacion en Visual studio", L"Verificacion mediante ejemplos",
 					L"Respaldo por fuentes confiables", L"No se valido"
 			});
-			this->cbValidacion->Location = System::Drawing::Point(822, 510);
+			this->cbValidacion->Location = System::Drawing::Point(612, 408);
 			this->cbValidacion->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->cbValidacion->Name = L"cbValidacion";
-			this->cbValidacion->Size = System::Drawing::Size(712, 27);
+			this->cbValidacion->Size = System::Drawing::Size(540, 30);
 			this->cbValidacion->TabIndex = 40;
 			// 
 			// Registro
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 19);
+			this->AutoScaleDimensions = System::Drawing::SizeF(11, 22);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1576, 669);
+			this->ClientSize = System::Drawing::Size(1194, 459);
 			this->Controls->Add(this->cbValidacion);
 			this->Controls->Add(this->btnDetalles);
 			this->Controls->Add(this->btnAleatorio);
