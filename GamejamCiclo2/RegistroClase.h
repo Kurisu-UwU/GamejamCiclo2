@@ -10,6 +10,7 @@ using namespace std;
 class DatosRegistro {
 private:
 	int numero;
+
 public:
 	DatosRegistro() : numero(0) {};
 	DatosRegistro(int n) : numero(n) {};

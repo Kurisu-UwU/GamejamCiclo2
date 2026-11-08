@@ -56,7 +56,7 @@ public:
 	void AsignarValoresTabla() {
 		int numero = 1;
 		string nomb = "Datos/DatosRegistro_" + to_string(numero) + ".txt";
-		ifstream archivo(nomb);
+		fstream archivo(nomb);
 
 	}
 };

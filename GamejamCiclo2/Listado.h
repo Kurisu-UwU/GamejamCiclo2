@@ -339,6 +339,7 @@ namespace GamejamCiclo2 {
 			this->Controls->Add(this->lblCurso);
 			this->Name = L"Listado";
 			this->Text = L"Listado";
+			this->Load += gcnew System::EventHandler(this, &Listado::Listado_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvListado))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -347,5 +348,7 @@ namespace GamejamCiclo2 {
 #pragma endregion
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	}
+private: System::Void Listado_Load(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
