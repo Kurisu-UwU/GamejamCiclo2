@@ -21,6 +21,21 @@ namespace GamejamCiclo2 {
 			//
 			//TODO: agregar código de constructor aquí
 			//
+
+			dgvListado->Rows->Add("1", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
+			dgvListado->Rows->Add("2", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
+			dgvListado->Rows->Add("3", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
+			dgvListado->Rows->Add("4", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
+			dgvListado->Rows->Add("5", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
+			dgvListado->Rows->Add("6", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
+			dgvListado->Rows->Add("7", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
+			dgvListado->Rows->Add("8", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
+			dgvListado->Rows->Add("9", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
+			dgvListado->Rows->Add("10", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
+			dgvListado->Rows->Add("11", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
+			dgvListado->Rows->Add("12", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
+			dgvListado->Rows->Add("13", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
+			dgvListado->Rows->Add("14", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
 		}
 
 	protected:
@@ -43,7 +58,8 @@ namespace GamejamCiclo2 {
 	private: System::Windows::Forms::Label^ lblCurso;
 	private: System::Windows::Forms::Button^ btnBuscar;
 	private: System::Windows::Forms::Button^ btnLimpiar;
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::DataGridView^ dgvListado;
+
 
 
 
@@ -104,10 +120,7 @@ namespace GamejamCiclo2 {
 			this->lblCurso = (gcnew System::Windows::Forms::Label());
 			this->btnBuscar = (gcnew System::Windows::Forms::Button());
 			this->btnLimpiar = (gcnew System::Windows::Forms::Button());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->lblTotal = (gcnew System::Windows::Forms::Label());
-			this->lblVerificados = (gcnew System::Windows::Forms::Label());
-			this->lblNoVerificados = (gcnew System::Windows::Forms::Label());
+			this->dgvListado = (gcnew System::Windows::Forms::DataGridView());
 			this->Numero = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Fecha = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Curso = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -115,7 +128,10 @@ namespace GamejamCiclo2 {
 			this->Herramienta = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Consulta = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Validado = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			this->lblTotal = (gcnew System::Windows::Forms::Label());
+			this->lblVerificados = (gcnew System::Windows::Forms::Label());
+			this->lblNoVerificados = (gcnew System::Windows::Forms::Label());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvListado))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// cbHerramienta
@@ -206,53 +222,21 @@ namespace GamejamCiclo2 {
 			this->btnLimpiar->Text = L"Limpiar";
 			this->btnLimpiar->UseVisualStyleBackColor = true;
 			// 
-			// dataGridView1
+			// dgvListado
 			// 
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(7) {
-				this->Numero,
-					this->Fecha, this->Curso, this->Categoría, this->Herramienta, this->Consulta, this->Validado
+			this->dgvListado->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dgvListado->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(7) {
+				this->Numero, this->Fecha,
+					this->Curso, this->Categoría, this->Herramienta, this->Consulta, this->Validado
 			});
-			this->dataGridView1->Location = System::Drawing::Point(12, 76);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(860, 72);
-			this->dataGridView1->TabIndex = 36;
-			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Listado::dataGridView1_CellContentClick);
-			// 
-			// lblTotal
-			// 
-			this->lblTotal->AutoSize = true;
-			this->lblTotal->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->lblTotal->Location = System::Drawing::Point(12, 484);
-			this->lblTotal->Name = L"lblTotal";
-			this->lblTotal->Size = System::Drawing::Size(161, 22);
-			this->lblTotal->TabIndex = 37;
-			this->lblTotal->Text = L"Total de Registros:";
-			// 
-			// lblVerificados
-			// 
-			this->lblVerificados->AutoSize = true;
-			this->lblVerificados->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->lblVerificados->Location = System::Drawing::Point(248, 484);
-			this->lblVerificados->Name = L"lblVerificados";
-			this->lblVerificados->Size = System::Drawing::Size(107, 22);
-			this->lblVerificados->TabIndex = 38;
-			this->lblVerificados->Text = L"Verificados:";
-			// 
-			// lblNoVerificados
-			// 
-			this->lblNoVerificados->AutoSize = true;
-			this->lblNoVerificados->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->lblNoVerificados->Location = System::Drawing::Point(484, 484);
-			this->lblNoVerificados->Name = L"lblNoVerificados";
-			this->lblNoVerificados->Size = System::Drawing::Size(136, 22);
-			this->lblNoVerificados->TabIndex = 39;
-			this->lblNoVerificados->Text = L"No Verificados:";
+			this->dgvListado->Location = System::Drawing::Point(12, 76);
+			this->dgvListado->Name = L"dgvListado";
+			this->dgvListado->RowHeadersVisible = false;
+			this->dgvListado->RowHeadersWidth = 51;
+			this->dgvListado->RowTemplate->Height = 24;
+			this->dgvListado->Size = System::Drawing::Size(1087, 376);
+			this->dgvListado->TabIndex = 36;
+			this->dgvListado->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Listado::dataGridView1_CellContentClick);
 			// 
 			// Numero
 			// 
@@ -287,6 +271,7 @@ namespace GamejamCiclo2 {
 			this->Herramienta->HeaderText = L"Herramienta";
 			this->Herramienta->MinimumWidth = 6;
 			this->Herramienta->Name = L"Herramienta";
+			this->Herramienta->Width = 125;
 			// 
 			// Consulta
 			// 
@@ -302,6 +287,39 @@ namespace GamejamCiclo2 {
 			this->Validado->Name = L"Validado";
 			this->Validado->Width = 80;
 			// 
+			// lblTotal
+			// 
+			this->lblTotal->AutoSize = true;
+			this->lblTotal->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblTotal->Location = System::Drawing::Point(12, 484);
+			this->lblTotal->Name = L"lblTotal";
+			this->lblTotal->Size = System::Drawing::Size(161, 22);
+			this->lblTotal->TabIndex = 37;
+			this->lblTotal->Text = L"Total de Registros:";
+			// 
+			// lblVerificados
+			// 
+			this->lblVerificados->AutoSize = true;
+			this->lblVerificados->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblVerificados->Location = System::Drawing::Point(248, 484);
+			this->lblVerificados->Name = L"lblVerificados";
+			this->lblVerificados->Size = System::Drawing::Size(107, 22);
+			this->lblVerificados->TabIndex = 38;
+			this->lblVerificados->Text = L"Verificados:";
+			// 
+			// lblNoVerificados
+			// 
+			this->lblNoVerificados->AutoSize = true;
+			this->lblNoVerificados->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblNoVerificados->Location = System::Drawing::Point(484, 484);
+			this->lblNoVerificados->Name = L"lblNoVerificados";
+			this->lblNoVerificados->Size = System::Drawing::Size(136, 22);
+			this->lblNoVerificados->TabIndex = 39;
+			this->lblNoVerificados->Text = L"No Verificados:";
+			// 
 			// Listado
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -310,7 +328,7 @@ namespace GamejamCiclo2 {
 			this->Controls->Add(this->lblNoVerificados);
 			this->Controls->Add(this->lblVerificados);
 			this->Controls->Add(this->lblTotal);
-			this->Controls->Add(this->dataGridView1);
+			this->Controls->Add(this->dgvListado);
 			this->Controls->Add(this->btnLimpiar);
 			this->Controls->Add(this->btnBuscar);
 			this->Controls->Add(this->cbHerramienta);
@@ -321,7 +339,7 @@ namespace GamejamCiclo2 {
 			this->Controls->Add(this->lblCurso);
 			this->Name = L"Listado";
 			this->Text = L"Listado";
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvListado))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
