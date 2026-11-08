@@ -45,6 +45,7 @@ namespace GamejamCiclo2 {
 			e->Graphics->FillRectangle(pincel9, 400, 50 + 250 - 200, 30, 200);
 		}
 
+
 	protected:
 		/// <summary>
 		/// Limpiar los recursos que se estén usando.

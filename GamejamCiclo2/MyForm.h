@@ -261,7 +261,7 @@ namespace GamejamCiclo2 {
 		controladora = frm->GetControladora();
 	}
 	private: System::Void btnAnalisis_Click(System::Object^ sender, System::EventArgs^ e) {
-		Listado^ frm = gcnew Listado();
+		Listado^ frm = gcnew Listado(controladora);
 		frm->ShowDialog();
 	}
 	private: System::Void btnDB3_Click(System::Object^ sender, System::EventArgs^ e) {
