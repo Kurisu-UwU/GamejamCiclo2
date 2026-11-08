@@ -32,4 +32,19 @@ public:
 
 	}
 
+	string getCurso() {
+		return curso;
+	}
+
+	string getCategoria() {
+		return categoria;
+	}
+
+	string getHerramienta() {
+		return herramienta;
+	}
+
+	string getFecha() {
+		return fecha;
+	}
 };
