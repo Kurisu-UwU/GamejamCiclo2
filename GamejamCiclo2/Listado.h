@@ -1,4 +1,5 @@
 #pragma once
+#include "ControladoraDeDatos.h"
 
 namespace GamejamCiclo2 {
 
@@ -22,6 +23,8 @@ namespace GamejamCiclo2 {
 			//TODO: agregar código de constructor aquí
 			//
 
+			controladora = new ControladoraDeDatos();
+			controladora->ObtenerRegistros();
 			dgvListado->Rows->Add("1", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
 			dgvListado->Rows->Add("2", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
 			dgvListado->Rows->Add("3", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
@@ -37,6 +40,8 @@ namespace GamejamCiclo2 {
 			dgvListado->Rows->Add("13", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
 			dgvListado->Rows->Add("14", "10/04/2026", "Algebra", "Tarea", "Gemini", "Como relizo una investigación", "Si");
 		}
+
+
 
 	protected:
 		/// <summary>
@@ -104,6 +109,7 @@ namespace GamejamCiclo2 {
 		/// Variable del diseñador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
+		ControladoraDeDatos* controladora;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
