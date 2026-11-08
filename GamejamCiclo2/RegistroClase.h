@@ -4,7 +4,6 @@
 #include <string>
 #include <vector>
 #include <conio.h>
-
 using namespace std;
 
 class DatosRegistro {
@@ -21,7 +20,7 @@ private:
 
 public:
 	DatosRegistro() : numero(0) {};
-	DatosRegistro(int n, string fech, string curs, string cate, string herra, string consul, string resul, string camb, bool vali) { 
+	DatosRegistro(int n, string fech, string curs, string cate, string herra, string consul, string resul, string camb, bool vali) : numero(n){ 
 		numero = n;
 		fecha = fech;
 		curso = curs;
@@ -157,6 +156,6 @@ public:
 			}
 			lineaInt++;
 		}
-		if (valido == "Copilacion en Visual studio" || valido == "Verificacion mediante ejemplos" || valido == "respaldo por fuentes confiables") this->validacion = true; else this->validacion = false;
+		if (valido == "Compilacion en Visual studio" || valido == "Verificacion mediante ejemplos" || valido == "respaldo por fuentes confiables") this->validacion = true; else this->validacion = false;
 	}
 };

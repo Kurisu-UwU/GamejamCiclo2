@@ -80,5 +80,11 @@
     <ClInclude Include="DatosTabla.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ClasePadre.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ControladoraDeDatosParte2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

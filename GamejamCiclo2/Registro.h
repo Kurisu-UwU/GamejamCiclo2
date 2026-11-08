@@ -18,13 +18,13 @@ namespace GamejamCiclo2 {
 	public ref class Registro : public System::Windows::Forms::Form
 	{
 	public:
-		Registro(ControladoraDeDatos * controladora)
+		Registro(ControladoraDeDatos* controladora)
 		{
 			InitializeComponent();
 			//
 			//TODO: agregar código de constructor aquí
 			//
-			controladora2 = controladora;
+			controladora2 = (ControladoraDeDatosParte1*)controladora;
 		}
 
 	protected:
@@ -69,7 +69,7 @@ namespace GamejamCiclo2 {
 		System::ComponentModel::Container ^components;
 	private: System::Windows::Forms::ComboBox^ cbValidacion;
 
-		   ControladoraDeDatos* controladora2;
+		   ControladoraDeDatosParte1* controladora2;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>

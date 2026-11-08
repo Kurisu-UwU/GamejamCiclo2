@@ -1,24 +1,15 @@
 #pragma once
-#include "RegistroClase.h";
-#include "DatosTabla.h"
+#include "ClasePadre.h"
 
-class ControladoraDeDatos {
+class ControladoraDeDatosParte1 : public ControladoraDeDatos {
 private:
-	vector<DatosRegistro> registros;
-	vector<DatosTabla> tabla;
-	int cantregistros;
 public:
-	ControladoraDeDatos() : cantregistros(0) {};
-	//ControladoraDeDatos() {};
-	~ControladoraDeDatos() {};
-	//Setters y getters
-
-
-	//funciones
+	ControladoraDeDatosParte1() {};
+	~ControladoraDeDatosParte1() {};
 
 	void GenerarDatoNuevo(string fecha, string curso, string categoria, string herramienta, string consulta, string resultado, string cambio, string valido) {
 		bool esValido = false;
-		if (valido == "Copilacion en Visual studio" || valido == "Verificacion mediante ejemplos" || valido == "respaldo por fuentes confiables") {
+		if (valido == "Compilacion en Visual studio" || valido == "Verificacion mediante ejemplos" || valido == "respaldo por fuentes confiables") {
 			esValido = true;
 		}
 		cantregistros++;
@@ -40,16 +31,9 @@ public:
 		}
 		archivoObj2.close();
 	}
-	void AgregarDatoExistente(int n) {
-		DatosRegistro r(n, "", "", "", "", "", "", "", false);
-		r.SeRegistraAsiMismo();
-		registros.push_back(r);
+	vector<DatosRegistro> ObtenerRegistros() override {
+		return this->registros;
 	}
-
-	void SetCantRegistros(int cant) {
-		cantregistros = cant;
-	}
-
 	/*vector<int> Calcularporcetajes() { //Desuso
 		vector<string> clave = { "consulta", "resultado", "cambio", "valido" };
 		vector<int> total(4,0);
@@ -62,16 +46,4 @@ public:
 		}
 		return total; 
 	}*/
-
-	vector<DatosRegistro> ObtenerRegistros() {
-		return registros;
-	}
-
-
-	void AsignarValoresTabla() {
-		int numero = 1;
-		string nomb = "Datos/DatosRegistro_" + to_string(numero) + ".txt";
-		fstream archivo(nomb);
-
-	}
 };
