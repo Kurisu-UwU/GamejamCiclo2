@@ -378,7 +378,7 @@ namespace GamejamCiclo2 {
 			string contenido(consul);
 			System::Runtime::InteropServices::Marshal::
 				FreeHGlobal(System::IntPtr((void*)consul));
-			return contenido;
+			return consul;
 		}
 		ControladoraDeDatos* GetControladora() {
 			return controladora2;
@@ -407,28 +407,45 @@ private: System::Void btnGuardar_Click(System::Object^ sender, System::EventArgs
 	
 
 	for (int i = 0; i < 100; i++) {
+		int nana = 0;
 		for (size_t j = 0; j < Cursos.size(); j++) {
-			if (!estacorrecto) break;
-			if (curso != Cursos[j]) {
-				estacorrecto = false;
+			if (estacorrecto) {
+				if (curso == Cursos[j]) {
+					nana++;
+				}
 			}
+		}
+		if (nana == 0) {
+			estacorrecto = false;
+			break;
 		}
 		for (size_t j = 0; j < Categoria.size(); j++) {
-			if (!estacorrecto) break;
-			if (categoria != Categoria[j]) {
-				estacorrecto = false;
+			if (estacorrecto) {
+				if (categoria == Categoria[j]) {
+					nana++;
+				}
 			}
+		}
+		if (nana == 0) {
+			estacorrecto = false;
+			break;
 		}
 		for (size_t j = 0; j < Herramienta.size(); j++) {
-			if (!estacorrecto) break;
-			if (herramienta != Herramienta[j]) {
-				estacorrecto = false;
+			if (estacorrecto) {
+				if (herramienta == Herramienta[j]) {
+					nana++;
+				}
 			}
 		}
+		if (nana == 0) {
+			estacorrecto = false;
+			break;
+		}
 		for (size_t j = 0; j < Valido.size(); j++) {
-			if (!estacorrecto) break;
-			if (valido != Valido[j]) {
-				estacorrecto = false;
+			if (estacorrecto) {
+				if (valido == Valido[j]) {
+					nana++;
+				}
 			}
 		}
 	}
