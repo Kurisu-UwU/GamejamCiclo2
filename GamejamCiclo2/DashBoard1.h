@@ -1,6 +1,8 @@
 #pragma once
 #include "DatosTabla.h"
 #include "ControladoraDeDatos.h"
+#include "string.h"
+#include "sstream"
 
 namespace GamejamCiclo2 {
 
@@ -51,7 +53,23 @@ namespace GamejamCiclo2 {
 			}
 			int total = numtarea + numLB1 + numEA1 + numConceptual + numDepuracion + numEB1 + numReto + numProyecto;
 
-			
+			int mayor = numtarea;
+
+			if (numLB1 > mayor) mayor = numLB1;
+			if (numEA1 > mayor) mayor = numEA1;
+			if (numConceptual > mayor) mayor = numConceptual;
+			if (numDepuracion > mayor) mayor = numDepuracion;
+			if (numEB1 > mayor) mayor = numEB1;
+			if (numReto > mayor) mayor = numReto;
+			if (numProyecto > mayor) mayor = numProyecto;
+
+			Pen^ lapicero = gcnew Pen(Color::Black);
+
+			SolidBrush^ pincelCalculo = gcnew SolidBrush(Color::Red);
+			SolidBrush^ pincelAlgoritmos = gcnew SolidBrush(Color::Blue);
+			SolidBrush^ pincelODE = gcnew SolidBrush(Color::Orange);
+			SolidBrush^ pincelSIA = gcnew SolidBrush(Color::Green);
+			SolidBrush^ pincelAIS = gcnew SolidBrush(Color::Yellow);
 
 			SolidBrush^ pincelTarea = gcnew SolidBrush(Color::Red);
 			SolidBrush^ pincelLB1 = gcnew SolidBrush(Color::Blue);
@@ -61,32 +79,195 @@ namespace GamejamCiclo2 {
 			SolidBrush^ pincelEB1 = gcnew SolidBrush(Color::Orange);
 			SolidBrush^ pincelReto = gcnew SolidBrush(Color::GreenYellow);
 			SolidBrush^ pincelProyecto = gcnew SolidBrush(Color::Aqua);
-			e->Graphics->FillRectangle(pincelTarea, 40, 50 + 180 - numtarea * (180 / total), 30, numtarea*(180/total));
-			e->Graphics->FillRectangle(pincelLB1, 80, 50 + 180 - numLB1 * (180 / total), 30, numLB1 * (180 / total));
-			e->Graphics->FillRectangle(pincelEA1, 120, 50 + 180 - numEA1 * (180 / total), 30, numEA1 * (180 / total));
-			e->Graphics->FillRectangle(pincelConceptual, 160, 50 + 180 - numConceptual * (180 / total), 30, numConceptual * (180 / total));
-			e->Graphics->FillRectangle(pincelDepuracion, 200, 50 + 180 - numDepuracion * (180 / total), 30, numDepuracion * (180 / total));
-			e->Graphics->FillRectangle(pincelEB1, 240, 50 + 180 - numEB1 * (180 / total), 30, numEB1 * (180 / total));
-			e->Graphics->FillRectangle(pincelReto, 280, 50 + 180 - numReto * (180 / total), 30, numReto * (180 / total));
-			e->Graphics->FillRectangle(pincelProyecto, 320, 50 + 180 - numProyecto * (180 / total), 30, numProyecto * (180 / total));
+			if (mayor != 0) {
+				e->Graphics->FillRectangle(pincelTarea, 40, 50 + 180 - numtarea * (180 / mayor), 30, numtarea * (180 / mayor));
+				e->Graphics->FillRectangle(pincelLB1, 80, 50 + 180 - numLB1 * (180 / mayor), 30, numLB1 * (180 / mayor));
+				e->Graphics->FillRectangle(pincelEA1, 120, 50 + 180 - numEA1 * (180 / mayor), 30, numEA1 * (180 / mayor));
+				e->Graphics->FillRectangle(pincelConceptual, 160, 50 + 180 - numConceptual * (180 / mayor), 30, numConceptual * (180 / mayor));
+				e->Graphics->FillRectangle(pincelDepuracion, 200, 50 + 180 - numDepuracion * (180 / mayor), 30, numDepuracion * (180 / mayor));
+				e->Graphics->FillRectangle(pincelEB1, 240, 50 + 180 - numEB1 * (180 / mayor), 30, numEB1 * (180 / mayor));
+				e->Graphics->FillRectangle(pincelReto, 280, 50 + 180 - numReto * (180 / mayor), 30, numReto * (180 / mayor));
+				e->Graphics->FillRectangle(pincelProyecto, 320, 50 + 180 - numProyecto * (180 / mayor), 30, numProyecto * (180 / mayor));
+
+				e->Graphics->FillRectangle(pincelTarea, 30, 260, 19, 19);
+				e->Graphics->FillRectangle(pincelLB1, 30, 283, 19, 19);
+				e->Graphics->FillRectangle(pincelEA1, 30, 306, 19, 19);
+				e->Graphics->FillRectangle(pincelConceptual, 30, 329, 19, 19);
+				e->Graphics->FillRectangle(pincelDepuracion, 30, 352, 19, 19);
+				e->Graphics->FillRectangle(pincelEB1, 190, 260, 19, 19);
+				e->Graphics->FillRectangle(pincelReto, 190, 283, 19, 19);
+				e->Graphics->FillRectangle(pincelProyecto, 190, 306, 19, 19);
+
+				e->Graphics->FillRectangle(pincelCalculo, 480, 260, 19, 19);
+				e->Graphics->FillRectangle(pincelAlgoritmos, 480, 283, 19, 19);
+				e->Graphics->FillRectangle(pincelODE, 480, 306, 19, 19);
+				e->Graphics->FillRectangle(pincelSIA, 480, 329, 19, 19);
+				e->Graphics->FillRectangle(pincelAIS, 480, 352, 19, 19);
+
+				e->Graphics->DrawLine(lapicero, 360, 230, 19, 230);
+
+				lblnumtarea->Text = gcnew System::String(to_string(numtarea).c_str());
+				lblnumLB1->Text = gcnew System::String(to_string(numLB1).c_str());
+				lblnumEA1->Text = gcnew System::String(to_string(numEA1).c_str());
+				lblnumConceptual->Text = gcnew System::String(to_string(numConceptual).c_str());
+				lblnumDepuracion->Text = gcnew System::String(to_string(numDepuracion).c_str());
+				lblnumEB1->Text = gcnew System::String(to_string(numEB1).c_str());
+				lblnumReto->Text = gcnew System::String(to_string(numReto).c_str());
+				lblnumProyecto->Text = gcnew System::String(to_string(numProyecto).c_str());
+			}
+			else {
+				lblError->Text = "               No se han registrado datos";
+				e->Graphics->FillRectangle(pincelTarea, 30, 260, 19, 19);
+				e->Graphics->FillRectangle(pincelLB1, 30, 283, 19, 19);
+				e->Graphics->FillRectangle(pincelEA1, 30, 306, 19, 19);
+				e->Graphics->FillRectangle(pincelConceptual, 30, 329, 19, 19);
+				e->Graphics->FillRectangle(pincelDepuracion, 30, 352, 19, 19);
+				e->Graphics->FillRectangle(pincelEB1, 190, 260, 19, 19);
+				e->Graphics->FillRectangle(pincelReto, 190, 283, 19, 19);
+				e->Graphics->FillRectangle(pincelProyecto, 190, 306, 19, 19);
+
+
+				e->Graphics->FillRectangle(pincelCalculo, 480, 260, 19, 19);
+				e->Graphics->FillRectangle(pincelAlgoritmos, 480, 283, 19, 19);
+				e->Graphics->FillRectangle(pincelODE, 480, 306, 19, 19);
+				e->Graphics->FillRectangle(pincelSIA, 480, 329, 19, 19);
+				e->Graphics->FillRectangle(pincelAIS, 480, 352, 19, 19);
+			}
+			
+
 		}
 
 		void DibujarGraficoCircular(PaintEventArgs^ e) {
+			int numCalculo = 0;
+			int numAlgoritmos = 0;
+			int numODE = 0;
+			int numSIA = 0;
+			int numAIS = 0;
+			vector<DatosRegistro> registros = controladora2->ObtenerRegistros();
 
+			for (int i = 0; i < registros.size(); i++) {
+				if (registros[i].getCurso() == "Calculo I") { numCalculo++; }
+				if (registros[i].getCurso() == "Algoritmos") { numAlgoritmos++; }
+				if (registros[i].getCurso() == "Organizacion y Direccion de Empresas") { numODE++; }
+				if (registros[i].getCurso() == "Seminario de Investigacion Academica") { numSIA++; }
+				if (registros[i].getCurso() == "Aplicaciones de ingenieria de Software") { numAIS++; }
+			}
 
+			float total = (float)(numCalculo + numAlgoritmos + numODE + numSIA + numAIS);
+
+			if (total == 0) return;
 
 			SolidBrush^ pincelCalculo = gcnew SolidBrush(Color::Red);
 			SolidBrush^ pincelAlgoritmos = gcnew SolidBrush(Color::Blue);
 			SolidBrush^ pincelODE = gcnew SolidBrush(Color::Orange);
 			SolidBrush^ pincelSIA = gcnew SolidBrush(Color::Green);
 			SolidBrush^ pincelAIS = gcnew SolidBrush(Color::Yellow);
-			e->Graphics->FillPie(pincelCalculo, 500, 60, 200, 200, 0, 72);
-			e->Graphics->FillPie(pincelAlgoritmos, 500, 60, 200, 200, 72, 72);
-			e->Graphics->FillPie(pincelODE, 500, 60, 200, 200, 144, 72);
-			e->Graphics->FillPie(pincelSIA, 500, 60, 200, 200, 216, 72);
-			e->Graphics->FillPie(pincelAIS, 500, 60, 200, 200, 288, 72);
+
+			float anguloCalculo = (numCalculo / total) * 360.0f;
+			float anguloAlgoritmos = (numAlgoritmos / total) * 360.0f;
+			float anguloODE = (numODE / total) * 360.0f;
+			float anguloSIA = (numSIA / total) * 360.0f;
+			float anguloAIS = (numAIS / total) * 360.0f;
+
+			float anguloActual = 0.0f;
+
+			e->Graphics->FillPie(pincelCalculo, 495.0f, 60.0f, 200.0f, 200.0f, anguloActual, anguloCalculo);
+			anguloActual += anguloCalculo;
+
+			e->Graphics->FillPie(pincelAlgoritmos, 495.0f, 60.0f, 200.0f, 200.0f, anguloActual, anguloAlgoritmos);
+			anguloActual += anguloAlgoritmos;
+
+			e->Graphics->FillPie(pincelODE, 495.0f, 60.0f, 200.0f, 200.0f, anguloActual, anguloODE);
+			anguloActual += anguloODE;
+
+			e->Graphics->FillPie(pincelSIA, 495.0f, 60.0f, 200.0f, 200.0f, anguloActual, anguloSIA);
+			anguloActual += anguloSIA;
+
+			e->Graphics->FillPie(pincelAIS, 495.0f, 60.0f, 200.0f, 200.0f, anguloActual, anguloAIS);
+
+			label2->Text = gcnew System::String(to_string(numCalculo * (100 / total)).c_str()) + "%";
+			label3->Text = gcnew System::String(to_string(numAlgoritmos * (100 / total)).c_str()) + "%";
+			label4->Text = gcnew System::String(to_string(numODE * (100 / total)).c_str()) + "%";
+			label5->Text = gcnew System::String(to_string(numSIA * (100 / total)).c_str()) + "%";
+			label6->Text = gcnew System::String(to_string(numAIS * (100 / total)).c_str()) + "%";
+
 		}
 
+		void Hallazgo3(PaintEventArgs^ e) {
+
+			int numEnero = 0;
+			int numFebrero = 0;
+			int numMarzo = 0;
+			int numAbril = 0;
+			int numMayo = 0;
+			int numJunio = 0;
+			int numJulio = 0;
+			int numAgosto = 0;
+			int numSeptiembre = 0;
+			int numOctubre = 0;
+			int numNoviembre = 0;
+			int numDiciembre = 0;
+
+			vector<DatosRegistro> registros = controladora2->ObtenerRegistros();
+			for (int i = 0; i < registros.size(); i++) {
+				std::string fechaactual = registros[i].getFecha();
+				int dia, mes, anio;
+				char barra;
+				std::stringstream ss(fechaactual);
+				ss >> dia >> barra >> mes >> barra >> anio;
+				if (mes == 1) { numEnero++; }
+				if (mes == 2) { numFebrero++; }
+				if (mes == 3) { numMarzo++; }
+				if (mes == 4) { numAbril++; }
+				if (mes == 5) { numMayo++; }
+				if (mes == 6) { numJunio++; }
+				if (mes == 7) { numJulio++; }
+				if (mes == 8) { numAgosto++; }
+				if (mes == 9) { numSeptiembre++; }
+				if (mes == 10) { numOctubre++; }
+				if (mes == 11) { numNoviembre++; }
+				if (mes == 12) { numDiciembre++; }
+			}
+			int mayor = numEnero;
+			if (numFebrero > mayor) mayor = numFebrero;
+			if (numMarzo > mayor) mayor = numMarzo;
+			if (numAbril > mayor) mayor = numAbril;
+			if (numMayo > mayor) mayor = numMayo;
+			if (numJunio > mayor) mayor = numJunio;
+			if (numJulio > mayor) mayor = numJulio;
+			if (numAgosto > mayor) mayor = numAgosto;
+			if (numSeptiembre > mayor) mayor = numSeptiembre;
+			if (numOctubre > mayor) mayor = numOctubre;
+			if (numNoviembre > mayor) mayor = numNoviembre;
+			if (numDiciembre > mayor) mayor = numDiciembre;
+
+			vector<string> mesesmayores;
+			if (numEnero == mayor) { mesesmayores.push_back("Enero"); }
+			if (numFebrero == mayor) { mesesmayores.push_back("Febrero"); }
+			if (numMarzo == mayor) { mesesmayores.push_back("Marzo"); }
+			if (numAbril == mayor) { mesesmayores.push_back("Abril"); }
+			if (numMayo == mayor) { mesesmayores.push_back("Mayo"); }
+			if (numJunio == mayor) { mesesmayores.push_back("Junio"); }
+			if (numJulio == mayor) { mesesmayores.push_back("Julio"); }
+			if (numAgosto == mayor) { mesesmayores.push_back("Agosto"); }
+			if (numSeptiembre == mayor) { mesesmayores.push_back("Septiembre"); }
+			if (numOctubre == mayor) { mesesmayores.push_back("Octubre"); }
+			if (numNoviembre == mayor) { mesesmayores.push_back("Noviembre"); }
+			if (numDiciembre == mayor) { mesesmayores.push_back("Diciembre"); }
+
+			string Hallazgo = "Mes o Meses de mayor uso de IA: ";
+			for (int i = 0; i < mesesmayores.size(); i++) {
+				if (i == 0) {
+					Hallazgo += mesesmayores[i];
+				}
+				else {
+					Hallazgo += ", " + mesesmayores[i];
+				}
+
+			}
+
+			lblTercerHallazgo->Text = gcnew System::String(Hallazgo.c_str());
+		}
 
 	protected:
 		/// <summary>
@@ -131,6 +312,29 @@ namespace GamejamCiclo2 {
 	private: System::Windows::Forms::Label^ lblProyecto;
 	private: System::Windows::Forms::Label^ lblConceptual;
 	private: System::Windows::Forms::Label^ lblDepuracion;
+private: System::Windows::Forms::Label^ lblnumtarea;
+private: System::Windows::Forms::Label^ lblnumLB1;
+private: System::Windows::Forms::Label^ lblnumConceptual;
+
+private: System::Windows::Forms::Label^ lblnumEA1;
+private: System::Windows::Forms::Label^ lblnumEB1;
+
+
+private: System::Windows::Forms::Label^ lblnumDepuracion;
+private: System::Windows::Forms::Label^ lblnumProyecto;
+
+
+private: System::Windows::Forms::Label^ lblnumReto;
+private: System::Windows::Forms::Label^ label2;
+private: System::Windows::Forms::Label^ label3;
+private: System::Windows::Forms::Label^ label4;
+private: System::Windows::Forms::Label^ label5;
+private: System::Windows::Forms::Label^ label6;
+private: System::Windows::Forms::Label^ lblTercerHallazgo;
+private: System::Windows::Forms::Label^ lblError;
+
+
+
 
 
 
@@ -157,6 +361,21 @@ namespace GamejamCiclo2 {
 			this->lblProyecto = (gcnew System::Windows::Forms::Label());
 			this->lblConceptual = (gcnew System::Windows::Forms::Label());
 			this->lblDepuracion = (gcnew System::Windows::Forms::Label());
+			this->lblnumtarea = (gcnew System::Windows::Forms::Label());
+			this->lblnumLB1 = (gcnew System::Windows::Forms::Label());
+			this->lblnumConceptual = (gcnew System::Windows::Forms::Label());
+			this->lblnumEA1 = (gcnew System::Windows::Forms::Label());
+			this->lblnumEB1 = (gcnew System::Windows::Forms::Label());
+			this->lblnumDepuracion = (gcnew System::Windows::Forms::Label());
+			this->lblnumProyecto = (gcnew System::Windows::Forms::Label());
+			this->lblnumReto = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->lblTercerHallazgo = (gcnew System::Windows::Forms::Label());
+			this->lblError = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// lblBarras
@@ -188,9 +407,9 @@ namespace GamejamCiclo2 {
 				static_cast<System::Byte>(0)));
 			this->lblCalculo->Location = System::Drawing::Point(677, 323);
 			this->lblCalculo->Name = L"lblCalculo";
-			this->lblCalculo->Size = System::Drawing::Size(71, 19);
+			this->lblCalculo->Size = System::Drawing::Size(76, 19);
 			this->lblCalculo->TabIndex = 2;
-			this->lblCalculo->Text = L"Calculo I";
+			this->lblCalculo->Text = L"Calculo I:";
 			// 
 			// lblAIS
 			// 
@@ -199,9 +418,9 @@ namespace GamejamCiclo2 {
 				static_cast<System::Byte>(0)));
 			this->lblAIS->Location = System::Drawing::Point(677, 436);
 			this->lblAIS->Name = L"lblAIS";
-			this->lblAIS->Size = System::Drawing::Size(275, 19);
+			this->lblAIS->Size = System::Drawing::Size(280, 19);
 			this->lblAIS->TabIndex = 3;
-			this->lblAIS->Text = L"Aplicaciones de Ingeniería de Software";
+			this->lblAIS->Text = L"Aplicaciones de Ingeniería de Software:";
 			// 
 			// lblAlgoritmos
 			// 
@@ -210,9 +429,9 @@ namespace GamejamCiclo2 {
 				static_cast<System::Byte>(0)));
 			this->lblAlgoritmos->Location = System::Drawing::Point(677, 351);
 			this->lblAlgoritmos->Name = L"lblAlgoritmos";
-			this->lblAlgoritmos->Size = System::Drawing::Size(87, 19);
+			this->lblAlgoritmos->Size = System::Drawing::Size(92, 19);
 			this->lblAlgoritmos->TabIndex = 4;
-			this->lblAlgoritmos->Text = L"Algoritmos";
+			this->lblAlgoritmos->Text = L"Algoritmos:";
 			// 
 			// lblODE
 			// 
@@ -221,9 +440,9 @@ namespace GamejamCiclo2 {
 				static_cast<System::Byte>(0)));
 			this->lblODE->Location = System::Drawing::Point(677, 379);
 			this->lblODE->Name = L"lblODE";
-			this->lblODE->Size = System::Drawing::Size(274, 19);
+			this->lblODE->Size = System::Drawing::Size(279, 19);
 			this->lblODE->TabIndex = 5;
-			this->lblODE->Text = L"Organización y Dirección de Empresas";
+			this->lblODE->Text = L"Organización y Dirección de Empresas:";
 			// 
 			// label1
 			// 
@@ -232,9 +451,9 @@ namespace GamejamCiclo2 {
 				static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(677, 408);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(271, 19);
+			this->label1->Size = System::Drawing::Size(276, 19);
 			this->label1->TabIndex = 6;
-			this->label1->Text = L"Seminario de Investigación Académica";
+			this->label1->Text = L"Seminario de Investigación Académica:";
 			// 
 			// lblEB1
 			// 
@@ -324,11 +543,191 @@ namespace GamejamCiclo2 {
 			this->lblDepuracion->TabIndex = 14;
 			this->lblDepuracion->Text = L"Depuracion de Errores";
 			// 
+			// lblnumtarea
+			// 
+			this->lblnumtarea->AutoSize = true;
+			this->lblnumtarea->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblnumtarea->Location = System::Drawing::Point(60, 287);
+			this->lblnumtarea->Name = L"lblnumtarea";
+			this->lblnumtarea->Size = System::Drawing::Size(13, 19);
+			this->lblnumtarea->TabIndex = 15;
+			this->lblnumtarea->Text = L" ";
+			// 
+			// lblnumLB1
+			// 
+			this->lblnumLB1->AutoSize = true;
+			this->lblnumLB1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblnumLB1->Location = System::Drawing::Point(113, 287);
+			this->lblnumLB1->Name = L"lblnumLB1";
+			this->lblnumLB1->Size = System::Drawing::Size(13, 19);
+			this->lblnumLB1->TabIndex = 16;
+			this->lblnumLB1->Text = L" ";
+			// 
+			// lblnumConceptual
+			// 
+			this->lblnumConceptual->AutoSize = true;
+			this->lblnumConceptual->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblnumConceptual->Location = System::Drawing::Point(221, 287);
+			this->lblnumConceptual->Name = L"lblnumConceptual";
+			this->lblnumConceptual->Size = System::Drawing::Size(13, 19);
+			this->lblnumConceptual->TabIndex = 18;
+			this->lblnumConceptual->Text = L" ";
+			// 
+			// lblnumEA1
+			// 
+			this->lblnumEA1->AutoSize = true;
+			this->lblnumEA1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblnumEA1->Location = System::Drawing::Point(168, 287);
+			this->lblnumEA1->Name = L"lblnumEA1";
+			this->lblnumEA1->Size = System::Drawing::Size(13, 19);
+			this->lblnumEA1->TabIndex = 17;
+			this->lblnumEA1->Text = L" ";
+			// 
+			// lblnumEB1
+			// 
+			this->lblnumEB1->AutoSize = true;
+			this->lblnumEB1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblnumEB1->Location = System::Drawing::Point(325, 287);
+			this->lblnumEB1->Name = L"lblnumEB1";
+			this->lblnumEB1->Size = System::Drawing::Size(13, 19);
+			this->lblnumEB1->TabIndex = 20;
+			this->lblnumEB1->Text = L" ";
+			// 
+			// lblnumDepuracion
+			// 
+			this->lblnumDepuracion->AutoSize = true;
+			this->lblnumDepuracion->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblnumDepuracion->Location = System::Drawing::Point(272, 287);
+			this->lblnumDepuracion->Name = L"lblnumDepuracion";
+			this->lblnumDepuracion->Size = System::Drawing::Size(13, 19);
+			this->lblnumDepuracion->TabIndex = 19;
+			this->lblnumDepuracion->Text = L" ";
+			// 
+			// lblnumProyecto
+			// 
+			this->lblnumProyecto->AutoSize = true;
+			this->lblnumProyecto->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblnumProyecto->Location = System::Drawing::Point(430, 287);
+			this->lblnumProyecto->Name = L"lblnumProyecto";
+			this->lblnumProyecto->Size = System::Drawing::Size(13, 19);
+			this->lblnumProyecto->TabIndex = 22;
+			this->lblnumProyecto->Text = L" ";
+			// 
+			// lblnumReto
+			// 
+			this->lblnumReto->AutoSize = true;
+			this->lblnumReto->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblnumReto->Location = System::Drawing::Point(377, 287);
+			this->lblnumReto->Name = L"lblnumReto";
+			this->lblnumReto->Size = System::Drawing::Size(13, 19);
+			this->lblnumReto->TabIndex = 21;
+			this->lblnumReto->Text = L" ";
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(1015, 323);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(13, 19);
+			this->label2->TabIndex = 23;
+			this->label2->Text = L" ";
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->Location = System::Drawing::Point(1015, 351);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(13, 19);
+			this->label3->TabIndex = 24;
+			this->label3->Text = L" ";
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label4->Location = System::Drawing::Point(1015, 380);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(13, 19);
+			this->label4->TabIndex = 25;
+			this->label4->Text = L" ";
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label5->Location = System::Drawing::Point(1015, 408);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(13, 19);
+			this->label5->TabIndex = 26;
+			this->label5->Text = L" ";
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label6->Location = System::Drawing::Point(1015, 436);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(13, 19);
+			this->label6->TabIndex = 27;
+			this->label6->Text = L" ";
+			// 
+			// lblTercerHallazgo
+			// 
+			this->lblTercerHallazgo->AutoSize = true;
+			this->lblTercerHallazgo->Font = (gcnew System::Drawing::Font(L"Times New Roman", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblTercerHallazgo->Location = System::Drawing::Point(19, 473);
+			this->lblTercerHallazgo->Name = L"lblTercerHallazgo";
+			this->lblTercerHallazgo->Size = System::Drawing::Size(39, 37);
+			this->lblTercerHallazgo->TabIndex = 28;
+			this->lblTercerHallazgo->Text = L"R";
+			// 
+			// lblError
+			// 
+			this->lblError->AutoSize = true;
+			this->lblError->Font = (gcnew System::Drawing::Font(L"Times New Roman", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lblError->Location = System::Drawing::Point(4, 132);
+			this->lblError->Name = L"lblError";
+			this->lblError->Size = System::Drawing::Size(44, 68);
+			this->lblError->TabIndex = 29;
+			this->lblError->Text = L" ";
+			// 
 			// DashBoard1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1195, 531);
+			this->Controls->Add(this->lblError);
+			this->Controls->Add(this->lblTercerHallazgo);
+			this->Controls->Add(this->label6);
+			this->Controls->Add(this->label5);
+			this->Controls->Add(this->label4);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->lblnumProyecto);
+			this->Controls->Add(this->lblnumReto);
+			this->Controls->Add(this->lblnumEB1);
+			this->Controls->Add(this->lblnumDepuracion);
+			this->Controls->Add(this->lblnumConceptual);
+			this->Controls->Add(this->lblnumEA1);
+			this->Controls->Add(this->lblnumLB1);
+			this->Controls->Add(this->lblnumtarea);
 			this->Controls->Add(this->lblDepuracion);
 			this->Controls->Add(this->lblConceptual);
 			this->Controls->Add(this->lblProyecto);
@@ -359,7 +758,7 @@ namespace GamejamCiclo2 {
 	private: System::Void DashBoard1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 		DibujarGraficoBarras(e);
 		DibujarGraficoCircular(e);
-
+		Hallazgo3(e);
 	}
 	};
 }

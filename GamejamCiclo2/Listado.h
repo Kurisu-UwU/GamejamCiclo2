@@ -1,5 +1,6 @@
 #pragma once
 #include "ControladoraDeDatos.h"
+#include "DashBoard1.h"
 
 namespace GamejamCiclo2 {
 
@@ -121,7 +122,8 @@ namespace GamejamCiclo2 {
 
 		int totalregistros;
 		int verificado;
-		int NoValidado;
+private: System::Windows::Forms::Button^ bntDashBoard;
+	   int NoValidado;
 #pragma region Windows Form Designer generated code
 		/// <summary>
 		/// Método necesario para admitir el Diseñador. No se puede modificar
@@ -148,6 +150,7 @@ namespace GamejamCiclo2 {
 			this->lblTotal = (gcnew System::Windows::Forms::Label());
 			this->lblVerificados = (gcnew System::Windows::Forms::Label());
 			this->lblNoVerificados = (gcnew System::Windows::Forms::Label());
+			this->bntDashBoard = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvListado))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -346,11 +349,24 @@ namespace GamejamCiclo2 {
 			this->lblNoVerificados->TabIndex = 39;
 			this->lblNoVerificados->Text = L"No Verificados:";
 			// 
+			// bntDashBoard
+			// 
+			this->bntDashBoard->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->bntDashBoard->Location = System::Drawing::Point(998, 468);
+			this->bntDashBoard->Name = L"bntDashBoard";
+			this->bntDashBoard->Size = System::Drawing::Size(160, 48);
+			this->bntDashBoard->TabIndex = 40;
+			this->bntDashBoard->Text = L"Ir a DashBoards";
+			this->bntDashBoard->UseVisualStyleBackColor = true;
+			this->bntDashBoard->Click += gcnew System::EventHandler(this, &Listado::bntDashBoard_Click);
+			// 
 			// Listado
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1170, 528);
+			this->Controls->Add(this->bntDashBoard);
 			this->Controls->Add(this->lblNoVerificados);
 			this->Controls->Add(this->lblVerificados);
 			this->Controls->Add(this->lblTotal);
@@ -409,6 +425,10 @@ private: System::Void btnLimpiar_Click(System::Object^ sender, System::EventArgs
 	cbHerramienta->Text = "";
 	dgvListado->Rows->Clear();
 
+}
+private: System::Void bntDashBoard_Click(System::Object^ sender, System::EventArgs^ e) {
+	DashBoard1^ frm = gcnew DashBoard1(controladora2);
+	frm->ShowDialog();
 }
 };
 }
