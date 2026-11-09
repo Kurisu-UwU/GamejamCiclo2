@@ -168,8 +168,8 @@ namespace GamejamCiclo2 {
 			// 
 			this->cbCurso->FormattingEnabled = true;
 			this->cbCurso->Items->AddRange(gcnew cli::array< System::Object^  >(6) {
-				L"Todos", L"Cálculo I", L"Algoritmos", L"Organización y Dirección de Empresas",
-					L"Aplicaciones de ingeniería de Software", L"Seminario de Investigación Académica"
+				L"Todos", L"Calculo I", L"Algoritmos", L"Organizacion y Direccion de Empresas",
+					L"Aplicaciones de ingenieria de Software", L"Seminario de Investigacion Academica"
 			});
 			this->cbCurso->Location = System::Drawing::Point(12, 37);
 			this->cbCurso->Name = L"cbCurso";

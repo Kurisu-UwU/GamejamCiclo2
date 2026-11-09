@@ -44,7 +44,7 @@ namespace GamejamCiclo2 {
 				if (registros[i].getCategoria() == "LB1") { numLB1++; }
 				if (registros[i].getCategoria() == "EA1") { numEA1++; }
 				if (registros[i].getCategoria() == "Consulta Conceptual") { numConceptual++; }
-				if (registros[i].getCategoria() == "Depuración de errores") { numDepuracion++; }
+				if (registros[i].getCategoria() == "Depuracion de errores") { numDepuracion++; }
 				if (registros[i].getCategoria() == "EB1") { numEB1++; }
 				if (registros[i].getCategoria() == "Reto") { numReto++; }
 				if (registros[i].getCategoria() == "Proyecto") { numProyecto++; }

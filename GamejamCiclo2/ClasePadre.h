@@ -5,7 +5,6 @@
 class ControladoraDeDatos {
 protected:
 	vector<DatosRegistro> registros;
-	vector<DatosTabla> tabla;
 	int cantregistros;
 public:
 	ControladoraDeDatos() {};

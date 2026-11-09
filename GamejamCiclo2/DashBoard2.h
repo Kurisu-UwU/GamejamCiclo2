@@ -106,7 +106,7 @@ namespace GamejamCiclo2 {
 			   // label1
 			   // 
 			   this->label1->AutoSize = true;
-			   this->label1->BackColor = System::Drawing::SystemColors::ControlLightLight;
+			   this->label1->BackColor = System::Drawing::SystemColors::Control;
 			   this->label1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
 			   this->label1->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
@@ -141,7 +141,7 @@ namespace GamejamCiclo2 {
 			   // 
 			   this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			   this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			   this->BackColor = System::Drawing::SystemColors::Window;
+			   this->BackColor = System::Drawing::SystemColors::Control;
 			   this->ClientSize = System::Drawing::Size(582, 414);
 			   this->Controls->Add(this->label2);
 			   this->Controls->Add(this->label3);

@@ -68,6 +68,7 @@ namespace GamejamCiclo2 {
 		/// </summary>
 		System::ComponentModel::Container ^components;
 	private: System::Windows::Forms::ComboBox^ cbValidacion;
+	private: System::Windows::Forms::Label^ label1;
 
 		   ControladoraDeDatosParte1* controladora2;
 
@@ -98,6 +99,7 @@ namespace GamejamCiclo2 {
 			this->btnAleatorio = (gcnew System::Windows::Forms::Button());
 			this->btnDetalles = (gcnew System::Windows::Forms::Button());
 			this->cbValidacion = (gcnew System::Windows::Forms::ComboBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// tbResultado
@@ -320,11 +322,23 @@ namespace GamejamCiclo2 {
 			this->cbValidacion->Size = System::Drawing::Size(540, 27);
 			this->cbValidacion->TabIndex = 40;
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(385, 20);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(0, 19);
+			this->label1->TabIndex = 41;
+			this->label1->Click += gcnew System::EventHandler(this, &Registro::label1_Click);
+			// 
 			// Registro
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 19);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1194, 498);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->cbValidacion);
 			this->Controls->Add(this->btnDetalles);
 			this->Controls->Add(this->btnAleatorio);
@@ -375,21 +389,61 @@ private: System::Void btnAleatorio_Click(System::Object^ sender, System::EventAr
 private: System::Void tbConsulta_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void btnGuardar_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ fecha = monthCalendar1->SelectionStart.ToShortDateString();
-	String^ curso = cbCurso->Text;
-	String^ categoria = cbCategoria->Text;
-	String^ herramienta = cbHerramienta->Text;
-	String^ consulta = tbConsulta->Text;
-	String^ resultado = tbResultado->Text;
-	String^ cambio = tbCambio->Text;
-	String^ valido = cbValidacion->Text;
-	controladora2->GenerarDatoNuevo(Transformer(fecha), Transformer(curso), Transformer(categoria), Transformer(herramienta), Transformer(consulta),Transformer(resultado), Transformer(cambio), Transformer(valido));
+	string fecha = Transformer(monthCalendar1->SelectionStart.ToShortDateString());
+	string curso = Transformer(cbCurso->Text);
+	string categoria = Transformer(cbCategoria->Text);
+	string herramienta = Transformer(cbHerramienta->Text);
+	string consulta = Transformer(tbConsulta->Text);
+	string resultado = Transformer(tbResultado->Text);
+	string cambio = Transformer(tbCambio->Text);
+	string valido = Transformer(cbValidacion->Text);
+
+	vector<string> Cursos{"Calculo I","Algoritmos","Organizacion y Direccion de Empresas","Aplicaciones de ingenieria de Software","Seminario de Investigacion Academica"};
+	vector<string> Categoria{"Tarea", "Examen", "LB1", "EA1", "EB1", "Reto","Proyecto", "Consulta Conceptual", "Depuración de errores"};
+	vector<string> Herramienta{"Gemini","Chat gpt","Claude","Copilot"};
+	vector<string> clave{ "consulta", "resultado", "cambio", "valido", "mejora", "cambiamos", "analizamos" };
+	vector<string> Valido{"Compilacion en Visual studio", "Verificacion mediante ejemplos","Respaldo por fuentes confiables", "No se valido"};
+	bool estacorrecto = true;
+	
+
+	for (int i = 0; i < 100; i++) {
+		for (size_t j = 0; j < Cursos.size(); j++) {
+			if (!estacorrecto) break;
+			if (curso != Cursos[j]) {
+				estacorrecto = false;
+			}
+		}
+		for (size_t j = 0; j < Categoria.size(); j++) {
+			if (!estacorrecto) break;
+			if (categoria != Categoria[j]) {
+				estacorrecto = false;
+			}
+		}
+		for (size_t j = 0; j < Herramienta.size(); j++) {
+			if (!estacorrecto) break;
+			if (herramienta != Herramienta[j]) {
+				estacorrecto = false;
+			}
+		}
+		for (size_t j = 0; j < Valido.size(); j++) {
+			if (!estacorrecto) break;
+			if (valido != Valido[j]) {
+				estacorrecto = false;
+			}
+		}
+	}
+	if (estacorrecto) {
+		MessageBox::Show("Datos registrados con éxito", "Registro exitosos", MessageBoxButtons::OK);
+		controladora2->GenerarDatoNuevo(fecha, curso, categoria,herramienta,consulta,resultado,cambio,valido);
+	}
+	else { MessageBox::Show("Datos erroneos, vuelva a intentar", "Registro erroneo", MessageBoxButtons::OK);; }
 }
 	private: System::Void btnDetalles_Click(System::Object^ sender, System::EventArgs^ e) {
 		Listado^ frm = gcnew Listado(controladora2);
 		frm->ShowDialog();
 	}
 private: System::Void btnLimpiar_Click(System::Object^ sender, System::EventArgs^ e) {
+
 	cbCategoria->Text = "";
 	cbCurso->Text = "";
 	cbHerramienta->Text = "";
@@ -460,6 +514,8 @@ private: System::Void btnAleatorio_Click_1(System::Object^ sender, System::Event
 				consulta, resultado, cambio, valido);
 		}
 	
+}
+private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 	

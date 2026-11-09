@@ -117,4 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Registro de bitácora para registrar datos - Tienes que registrar los datos para que los 
+Dashboards y Análisis funcionen correctamente
+
+Detalle y análisis es una lista detallada de todos los registros guardados
+
+Dashboard 1 es el análisis de uso IA en tipos e proyectos y cursos
+
+Dashboard 2 es la cantidad de validaciones correctas del resultado IA
+
+Dashboard 3 es la cantidad de términos que se usaron como consulta y validación
+
+Creadores, aprieta y verás ;)
+
+
+
+
+</value>
+  </data>
 </root>

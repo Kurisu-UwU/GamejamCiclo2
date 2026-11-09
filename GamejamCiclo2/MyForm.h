@@ -4,6 +4,8 @@
 #include "DashBoard3.h"
 #include "DashBoard2.h"
 #include "DashBoard1.h"
+#include "Creadores.h"
+#include "Instrucciones.h"
 
 namespace GamejamCiclo2 {
 
@@ -27,6 +29,7 @@ namespace GamejamCiclo2 {
 			//TODO: Add the constructor code here
 			//
 			controladora2 = new ControladoraDeDatos();
+			label8->Text = Char::ConvertFromUtf32(0x2705);
 		}
 
 	protected:
@@ -67,7 +70,8 @@ namespace GamejamCiclo2 {
 		/// Required designer variable.
 		/// </summary>
 		System::ComponentModel::Container^ components;
-		ControladoraDeDatos* controladora2;
+	private: System::Windows::Forms::Label^ label8;
+		   ControladoraDeDatos* controladora2;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -84,6 +88,7 @@ namespace GamejamCiclo2 {
 			this->btnDB3 = (gcnew System::Windows::Forms::Button());
 			this->btnInstrucciones = (gcnew System::Windows::Forms::Button());
 			this->btnCreadores = (gcnew System::Windows::Forms::Button());
+			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// btnRegistro
@@ -169,6 +174,7 @@ namespace GamejamCiclo2 {
 			this->btnInstrucciones->TabIndex = 10;
 			this->btnInstrucciones->Text = L"Instrucciones";
 			this->btnInstrucciones->UseVisualStyleBackColor = true;
+			this->btnInstrucciones->Click += gcnew System::EventHandler(this, &MyForm::btnInstrucciones_Click);
 			// 
 			// btnCreadores
 			// 
@@ -180,12 +186,28 @@ namespace GamejamCiclo2 {
 			this->btnCreadores->TabIndex = 11;
 			this->btnCreadores->Text = L"Creadores";
 			this->btnCreadores->UseVisualStyleBackColor = true;
+			this->btnCreadores->Click += gcnew System::EventHandler(this, &MyForm::btnCreadores_Click);
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->BackColor = System::Drawing::Color::Transparent;
+			this->label8->Font = (gcnew System::Drawing::Font(L"Times New Roman", 17.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label8->ForeColor = System::Drawing::Color::LimeGreen;
+			this->label8->Location = System::Drawing::Point(220, 11);
+			this->label8->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(24, 25);
+			this->label8->TabIndex = 16;
+			this->label8->Text = L"a";
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(781, 353);
+			this->Controls->Add(this->label8);
 			this->Controls->Add(this->btnCreadores);
 			this->Controls->Add(this->btnInstrucciones);
 			this->Controls->Add(this->btnDB3);
@@ -263,6 +285,14 @@ namespace GamejamCiclo2 {
 	}
 private: System::Void btnDB2_Click(System::Object^ sender, System::EventArgs^ e) {
 	DashBoard2^ frm = gcnew DashBoard2(controladora2);
+	frm->ShowDialog();
+}
+private: System::Void btnCreadores_Click(System::Object^ sender, System::EventArgs^ e) {
+	Creadores^ frm = gcnew Creadores();
+	frm->ShowDialog();
+}
+private: System::Void btnInstrucciones_Click(System::Object^ sender, System::EventArgs^ e) {
+	Instrucciones^ frm = gcnew Instrucciones();
 	frm->ShowDialog();
 }
 };
