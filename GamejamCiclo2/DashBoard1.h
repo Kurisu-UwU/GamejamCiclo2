@@ -383,9 +383,10 @@ private: System::Windows::Forms::Label^ lblError;
 			this->lblBarras->AutoSize = true;
 			this->lblBarras->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblBarras->Location = System::Drawing::Point(12, 22);
+			this->lblBarras->Location = System::Drawing::Point(9, 18);
+			this->lblBarras->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->lblBarras->Name = L"lblBarras";
-			this->lblBarras->Size = System::Drawing::Size(405, 22);
+			this->lblBarras->Size = System::Drawing::Size(310, 19);
 			this->lblBarras->TabIndex = 0;
 			this->lblBarras->Text = L"Registro de categorias en las que más se usa la IA";
 			// 
@@ -394,9 +395,10 @@ private: System::Windows::Forms::Label^ lblError;
 			this->lblCursos->AutoSize = true;
 			this->lblCursos->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblCursos->Location = System::Drawing::Point(637, 22);
+			this->lblCursos->Location = System::Drawing::Point(478, 18);
+			this->lblCursos->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->lblCursos->Name = L"lblCursos";
-			this->lblCursos->Size = System::Drawing::Size(376, 22);
+			this->lblCursos->Size = System::Drawing::Size(289, 19);
 			this->lblCursos->TabIndex = 1;
 			this->lblCursos->Text = L"Registro de cursos en los que más se usa la IA";
 			// 
@@ -405,9 +407,10 @@ private: System::Windows::Forms::Label^ lblError;
 			this->lblCalculo->AutoSize = true;
 			this->lblCalculo->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblCalculo->Location = System::Drawing::Point(677, 323);
+			this->lblCalculo->Location = System::Drawing::Point(508, 262);
+			this->lblCalculo->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->lblCalculo->Name = L"lblCalculo";
-			this->lblCalculo->Size = System::Drawing::Size(76, 19);
+			this->lblCalculo->Size = System::Drawing::Size(61, 16);
 			this->lblCalculo->TabIndex = 2;
 			this->lblCalculo->Text = L"Calculo I:";
 			// 
@@ -416,9 +419,10 @@ private: System::Windows::Forms::Label^ lblError;
 			this->lblAIS->AutoSize = true;
 			this->lblAIS->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblAIS->Location = System::Drawing::Point(677, 436);
+			this->lblAIS->Location = System::Drawing::Point(508, 354);
+			this->lblAIS->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->lblAIS->Name = L"lblAIS";
-			this->lblAIS->Size = System::Drawing::Size(280, 19);
+			this->lblAIS->Size = System::Drawing::Size(231, 16);
 			this->lblAIS->TabIndex = 3;
 			this->lblAIS->Text = L"Aplicaciones de Ingeniería de Software:";
 			// 
@@ -427,9 +431,10 @@ private: System::Windows::Forms::Label^ lblError;
 			this->lblAlgoritmos->AutoSize = true;
 			this->lblAlgoritmos->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblAlgoritmos->Location = System::Drawing::Point(677, 351);
+			this->lblAlgoritmos->Location = System::Drawing::Point(508, 285);
+			this->lblAlgoritmos->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->lblAlgoritmos->Name = L"lblAlgoritmos";
-			this->lblAlgoritmos->Size = System::Drawing::Size(92, 19);
+			this->lblAlgoritmos->Size = System::Drawing::Size(72, 16);
 			this->lblAlgoritmos->TabIndex = 4;
 			this->lblAlgoritmos->Text = L"Algoritmos:";
 			// 
@@ -438,9 +443,10 @@ private: System::Windows::Forms::Label^ lblError;
 			this->lblODE->AutoSize = true;
 			this->lblODE->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblODE->Location = System::Drawing::Point(677, 379);
+			this->lblODE->Location = System::Drawing::Point(508, 308);
+			this->lblODE->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->lblODE->Name = L"lblODE";
-			this->lblODE->Size = System::Drawing::Size(279, 19);
+			this->lblODE->Size = System::Drawing::Size(230, 16);
 			this->lblODE->TabIndex = 5;
 			this->lblODE->Text = L"Organización y Dirección de Empresas:";
 			// 
@@ -449,9 +455,10 @@ private: System::Windows::Forms::Label^ lblError;
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(677, 408);
+			this->label1->Location = System::Drawing::Point(508, 332);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(276, 19);
+			this->label1->Size = System::Drawing::Size(227, 16);
 			this->label1->TabIndex = 6;
 			this->label1->Text = L"Seminario de Investigación Académica:";
 			// 
@@ -460,9 +467,10 @@ private: System::Windows::Forms::Label^ lblError;
 			this->lblEB1->AutoSize = true;
 			this->lblEB1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblEB1->Location = System::Drawing::Point(282, 323);
+			this->lblEB1->Location = System::Drawing::Point(212, 262);
+			this->lblEB1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->lblEB1->Name = L"lblEB1";
-			this->lblEB1->Size = System::Drawing::Size(39, 19);
+			this->lblEB1->Size = System::Drawing::Size(30, 16);
 			this->lblEB1->TabIndex = 11;
 			this->lblEB1->Text = L"EB1";
 			// 
@@ -471,9 +479,10 @@ private: System::Windows::Forms::Label^ lblError;
 			this->lblEA1->AutoSize = true;
 			this->lblEA1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblEA1->Location = System::Drawing::Point(75, 379);
+			this->lblEA1->Location = System::Drawing::Point(56, 308);
+			this->lblEA1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->lblEA1->Name = L"lblEA1";
-			this->lblEA1->Size = System::Drawing::Size(39, 19);
+			this->lblEA1->Size = System::Drawing::Size(31, 16);
 			this->lblEA1->TabIndex = 10;
 			this->lblEA1->Text = L"EA1";
 			// 
@@ -482,9 +491,10 @@ private: System::Windows::Forms::Label^ lblError;
 			this->lblLB1->AutoSize = true;
 			this->lblLB1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblLB1->Location = System::Drawing::Point(75, 351);
+			this->lblLB1->Location = System::Drawing::Point(56, 285);
+			this->lblLB1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->lblLB1->Name = L"lblLB1";
-			this->lblLB1->Size = System::Drawing::Size(39, 19);
+			this->lblLB1->Size = System::Drawing::Size(30, 16);
 			this->lblLB1->TabIndex = 9;
 			this->lblLB1->Text = L"LB1";
 			// 
@@ -493,9 +503,10 @@ private: System::Windows::Forms::Label^ lblError;
 			this->lblReto->AutoSize = true;
 			this->lblReto->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblReto->Location = System::Drawing::Point(282, 351);
+			this->lblReto->Location = System::Drawing::Point(212, 285);
+			this->lblReto->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->lblReto->Name = L"lblReto";
-			this->lblReto->Size = System::Drawing::Size(42, 19);
+			this->lblReto->Size = System::Drawing::Size(33, 16);
 			this->lblReto->TabIndex = 8;
 			this->lblReto->Text = L"Reto";
 			// 
@@ -504,9 +515,10 @@ private: System::Windows::Forms::Label^ lblError;
 			this->lblTarea->AutoSize = true;
 			this->lblTarea->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblTarea->Location = System::Drawing::Point(75, 323);
+			this->lblTarea->Location = System::Drawing::Point(56, 262);
+			this->lblTarea->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->lblTarea->Name = L"lblTarea";
-			this->lblTarea->Size = System::Drawing::Size(45, 19);
+			this->lblTarea->Size = System::Drawing::Size(38, 16);
 			this->lblTarea->TabIndex = 7;
 			this->lblTarea->Text = L"Tarea";
 			// 
@@ -515,9 +527,10 @@ private: System::Windows::Forms::Label^ lblError;
 			this->lblProyecto->AutoSize = true;
 			this->lblProyecto->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblProyecto->Location = System::Drawing::Point(282, 380);
+			this->lblProyecto->Location = System::Drawing::Point(212, 309);
+			this->lblProyecto->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->lblProyecto->Name = L"lblProyecto";
-			this->lblProyecto->Size = System::Drawing::Size(72, 19);
+			this->lblProyecto->Size = System::Drawing::Size(58, 16);
 			this->lblProyecto->TabIndex = 12;
 			this->lblProyecto->Text = L"Proyecto";
 			// 
@@ -526,9 +539,10 @@ private: System::Windows::Forms::Label^ lblError;
 			this->lblConceptual->AutoSize = true;
 			this->lblConceptual->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblConceptual->Location = System::Drawing::Point(75, 408);
+			this->lblConceptual->Location = System::Drawing::Point(56, 332);
+			this->lblConceptual->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->lblConceptual->Name = L"lblConceptual";
-			this->lblConceptual->Size = System::Drawing::Size(150, 19);
+			this->lblConceptual->Size = System::Drawing::Size(123, 16);
 			this->lblConceptual->TabIndex = 13;
 			this->lblConceptual->Text = L"Consulta Conceptual";
 			// 
@@ -537,9 +551,10 @@ private: System::Windows::Forms::Label^ lblError;
 			this->lblDepuracion->AutoSize = true;
 			this->lblDepuracion->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblDepuracion->Location = System::Drawing::Point(75, 436);
+			this->lblDepuracion->Location = System::Drawing::Point(56, 354);
+			this->lblDepuracion->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->lblDepuracion->Name = L"lblDepuracion";
-			this->lblDepuracion->Size = System::Drawing::Size(164, 19);
+			this->lblDepuracion->Size = System::Drawing::Size(135, 16);
 			this->lblDepuracion->TabIndex = 14;
 			this->lblDepuracion->Text = L"Depuracion de Errores";
 			// 
@@ -548,9 +563,10 @@ private: System::Windows::Forms::Label^ lblError;
 			this->lblnumtarea->AutoSize = true;
 			this->lblnumtarea->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblnumtarea->Location = System::Drawing::Point(60, 287);
+			this->lblnumtarea->Location = System::Drawing::Point(45, 233);
+			this->lblnumtarea->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->lblnumtarea->Name = L"lblnumtarea";
-			this->lblnumtarea->Size = System::Drawing::Size(13, 19);
+			this->lblnumtarea->Size = System::Drawing::Size(11, 16);
 			this->lblnumtarea->TabIndex = 15;
 			this->lblnumtarea->Text = L" ";
 			// 
@@ -559,9 +575,10 @@ private: System::Windows::Forms::Label^ lblError;
 			this->lblnumLB1->AutoSize = true;
 			this->lblnumLB1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblnumLB1->Location = System::Drawing::Point(113, 287);
+			this->lblnumLB1->Location = System::Drawing::Point(85, 233);
+			this->lblnumLB1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->lblnumLB1->Name = L"lblnumLB1";
-			this->lblnumLB1->Size = System::Drawing::Size(13, 19);
+			this->lblnumLB1->Size = System::Drawing::Size(11, 16);
 			this->lblnumLB1->TabIndex = 16;
 			this->lblnumLB1->Text = L" ";
 			// 
@@ -570,9 +587,10 @@ private: System::Windows::Forms::Label^ lblError;
 			this->lblnumConceptual->AutoSize = true;
 			this->lblnumConceptual->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblnumConceptual->Location = System::Drawing::Point(221, 287);
+			this->lblnumConceptual->Location = System::Drawing::Point(166, 233);
+			this->lblnumConceptual->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->lblnumConceptual->Name = L"lblnumConceptual";
-			this->lblnumConceptual->Size = System::Drawing::Size(13, 19);
+			this->lblnumConceptual->Size = System::Drawing::Size(11, 16);
 			this->lblnumConceptual->TabIndex = 18;
 			this->lblnumConceptual->Text = L" ";
 			// 
@@ -581,9 +599,10 @@ private: System::Windows::Forms::Label^ lblError;
 			this->lblnumEA1->AutoSize = true;
 			this->lblnumEA1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblnumEA1->Location = System::Drawing::Point(168, 287);
+			this->lblnumEA1->Location = System::Drawing::Point(126, 233);
+			this->lblnumEA1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->lblnumEA1->Name = L"lblnumEA1";
-			this->lblnumEA1->Size = System::Drawing::Size(13, 19);
+			this->lblnumEA1->Size = System::Drawing::Size(11, 16);
 			this->lblnumEA1->TabIndex = 17;
 			this->lblnumEA1->Text = L" ";
 			// 
@@ -592,9 +611,10 @@ private: System::Windows::Forms::Label^ lblError;
 			this->lblnumEB1->AutoSize = true;
 			this->lblnumEB1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblnumEB1->Location = System::Drawing::Point(325, 287);
+			this->lblnumEB1->Location = System::Drawing::Point(244, 233);
+			this->lblnumEB1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->lblnumEB1->Name = L"lblnumEB1";
-			this->lblnumEB1->Size = System::Drawing::Size(13, 19);
+			this->lblnumEB1->Size = System::Drawing::Size(11, 16);
 			this->lblnumEB1->TabIndex = 20;
 			this->lblnumEB1->Text = L" ";
 			// 
@@ -603,9 +623,10 @@ private: System::Windows::Forms::Label^ lblError;
 			this->lblnumDepuracion->AutoSize = true;
 			this->lblnumDepuracion->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblnumDepuracion->Location = System::Drawing::Point(272, 287);
+			this->lblnumDepuracion->Location = System::Drawing::Point(204, 233);
+			this->lblnumDepuracion->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->lblnumDepuracion->Name = L"lblnumDepuracion";
-			this->lblnumDepuracion->Size = System::Drawing::Size(13, 19);
+			this->lblnumDepuracion->Size = System::Drawing::Size(11, 16);
 			this->lblnumDepuracion->TabIndex = 19;
 			this->lblnumDepuracion->Text = L" ";
 			// 
@@ -614,9 +635,10 @@ private: System::Windows::Forms::Label^ lblError;
 			this->lblnumProyecto->AutoSize = true;
 			this->lblnumProyecto->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblnumProyecto->Location = System::Drawing::Point(430, 287);
+			this->lblnumProyecto->Location = System::Drawing::Point(322, 233);
+			this->lblnumProyecto->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->lblnumProyecto->Name = L"lblnumProyecto";
-			this->lblnumProyecto->Size = System::Drawing::Size(13, 19);
+			this->lblnumProyecto->Size = System::Drawing::Size(11, 16);
 			this->lblnumProyecto->TabIndex = 22;
 			this->lblnumProyecto->Text = L" ";
 			// 
@@ -625,9 +647,10 @@ private: System::Windows::Forms::Label^ lblError;
 			this->lblnumReto->AutoSize = true;
 			this->lblnumReto->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblnumReto->Location = System::Drawing::Point(377, 287);
+			this->lblnumReto->Location = System::Drawing::Point(283, 233);
+			this->lblnumReto->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->lblnumReto->Name = L"lblnumReto";
-			this->lblnumReto->Size = System::Drawing::Size(13, 19);
+			this->lblnumReto->Size = System::Drawing::Size(11, 16);
 			this->lblnumReto->TabIndex = 21;
 			this->lblnumReto->Text = L" ";
 			// 
@@ -636,9 +659,10 @@ private: System::Windows::Forms::Label^ lblError;
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(1015, 323);
+			this->label2->Location = System::Drawing::Point(761, 262);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(13, 19);
+			this->label2->Size = System::Drawing::Size(11, 16);
 			this->label2->TabIndex = 23;
 			this->label2->Text = L" ";
 			// 
@@ -647,9 +671,10 @@ private: System::Windows::Forms::Label^ lblError;
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(1015, 351);
+			this->label3->Location = System::Drawing::Point(761, 285);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(13, 19);
+			this->label3->Size = System::Drawing::Size(11, 16);
 			this->label3->TabIndex = 24;
 			this->label3->Text = L" ";
 			// 
@@ -658,9 +683,10 @@ private: System::Windows::Forms::Label^ lblError;
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(1015, 380);
+			this->label4->Location = System::Drawing::Point(761, 309);
+			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(13, 19);
+			this->label4->Size = System::Drawing::Size(11, 16);
 			this->label4->TabIndex = 25;
 			this->label4->Text = L" ";
 			// 
@@ -669,9 +695,10 @@ private: System::Windows::Forms::Label^ lblError;
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(1015, 408);
+			this->label5->Location = System::Drawing::Point(761, 332);
+			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(13, 19);
+			this->label5->Size = System::Drawing::Size(11, 16);
 			this->label5->TabIndex = 26;
 			this->label5->Text = L" ";
 			// 
@@ -680,9 +707,10 @@ private: System::Windows::Forms::Label^ lblError;
 			this->label6->AutoSize = true;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(1015, 436);
+			this->label6->Location = System::Drawing::Point(761, 354);
+			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(13, 19);
+			this->label6->Size = System::Drawing::Size(11, 16);
 			this->label6->TabIndex = 27;
 			this->label6->Text = L" ";
 			// 
@@ -691,9 +719,10 @@ private: System::Windows::Forms::Label^ lblError;
 			this->lblTercerHallazgo->AutoSize = true;
 			this->lblTercerHallazgo->Font = (gcnew System::Drawing::Font(L"Times New Roman", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblTercerHallazgo->Location = System::Drawing::Point(19, 473);
+			this->lblTercerHallazgo->Location = System::Drawing::Point(14, 384);
+			this->lblTercerHallazgo->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->lblTercerHallazgo->Name = L"lblTercerHallazgo";
-			this->lblTercerHallazgo->Size = System::Drawing::Size(39, 37);
+			this->lblTercerHallazgo->Size = System::Drawing::Size(32, 31);
 			this->lblTercerHallazgo->TabIndex = 28;
 			this->lblTercerHallazgo->Text = L"R";
 			// 
@@ -702,17 +731,18 @@ private: System::Windows::Forms::Label^ lblError;
 			this->lblError->AutoSize = true;
 			this->lblError->Font = (gcnew System::Drawing::Font(L"Times New Roman", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblError->Location = System::Drawing::Point(4, 132);
+			this->lblError->Location = System::Drawing::Point(3, 107);
+			this->lblError->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->lblError->Name = L"lblError";
-			this->lblError->Size = System::Drawing::Size(44, 68);
+			this->lblError->Size = System::Drawing::Size(36, 55);
 			this->lblError->TabIndex = 29;
 			this->lblError->Text = L" ";
 			// 
 			// DashBoard1
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1195, 531);
+			this->ClientSize = System::Drawing::Size(896, 431);
 			this->Controls->Add(this->lblError);
 			this->Controls->Add(this->lblTercerHallazgo);
 			this->Controls->Add(this->label6);
@@ -743,7 +773,6 @@ private: System::Windows::Forms::Label^ lblError;
 			this->Controls->Add(this->lblCalculo);
 			this->Controls->Add(this->lblCursos);
 			this->Controls->Add(this->lblBarras);
-			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"DashBoard1";
 			this->Text = L"DashBoard1";
 			this->Load += gcnew System::EventHandler(this, &DashBoard1::DashBoard1_Load);
